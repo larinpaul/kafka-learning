@@ -28,3 +28,22 @@
 // * Stream processing in big data pipelines
 
 
+// 3. Setup A Local Environment
+
+// If we deal with Kafka for the first time, we might like to have a local installation
+// to experience its features. We could get this quickly with the help of Docker.
+
+
+// 3.1. Install Kafka
+
+// We download an existing image and run a container instance with this command:
+docker run -p 9092:9092 -d bash79/kafka-kraft // https://hub.docker.com/r/bashj79/kafka-kraft
+
+// This will make the so-called Kafka broker available on the host system at port 9092.
+// Now, we would like to connect to the broker using a Kafka client. 
+// There are multiple clients that we can use.
+
+
+
+
+
