@@ -75,3 +75,20 @@ sh kafka-console-producer.sh --bootstrap-server localhost:9092 --topic my-first-
 
 // 3.3. Use KafkaIO GUI
 
+// ...
+
+
+// 3.4. Use UI for Apache Kafka (Kafka UI)
+
+// The UI for Apache Kafka (Kafka UI) // https://github.com/kafbat/kafka-ui
+// is a web UI, implemented with Spring Boot and React,
+// and provided as a Docker image for a simple installation as a container // https://hub.docker.com/r/provectuslabs/kafka-ui
+// with the following command:
+docker run -it -p 8080:8080 -e DYNAMIC_CONFIG_ENABLED=true provectuslabs/kafka-ui
+
+// We can then open the UI in the browser using http://localhost:8080 and define a cluster, as this picture shows:
+
+
+
+
+
