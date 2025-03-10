@@ -43,7 +43,35 @@ docker run -p 9092:9092 -d bash79/kafka-kraft // https://hub.docker.com/r/bashj7
 // Now, we would like to connect to the broker using a Kafka client. 
 // There are multiple clients that we can use.
 
+// The Kafka CLI is a part of the installation and is available within the Docker container.
+// We can use it by connecting to the container's bash.
+
+// First, we need to find out the container's name with this command:
+
+docker ps
+
+CONTAINER ID   IMAGE                    COMMAND                  CREATED        STATUS       PORTS                    NAMES
+7653830053fa   bashj79/kafka-kraft      "/bin/start_kafka.sh"    8 weeks ago    Up 2 hours   0.0.0.0:9092->9092/tcp   awesome_aryabhata
+
+// In this sample, the name is awesome_aryabhata. We then connect to the bash using: // https://www.baeldung.com/linux/shell-alpine-docker
+docker exec -it awesome_aryabhata /bin/bash
+
+// Now, we can, for example, create a topic (we'll clarify this term later) and list all existing topics with this commands:
+
+cd /opt/kafka/bin
+
+# create topic 'my-first-topic'
+sh kafka-topics.sh --bootstrap-server localhost:9092 --create --topic my-first-topic --partitions 1 -- replication-factor 1
+
+# list topics
+sh kafka-topics.sh --bootstap-server localhost:9092 --list
+
+# send messages to the topic
+sh kafka-console-producer.sh --bootstrap-server localhost:9092 --topic my-first-topic
+>Hello World
+>The weather is fine
+>I love Kafka
 
 
-
+// 3.3. Use KafkaIO GUI
 
