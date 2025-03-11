@@ -102,7 +102,24 @@ docker exec -it --user=root <name-of-kafka-ui-container> /bin/sh
 apk add socat
 # Use socat to create the port forwarding
 socat tcp-listen:9092,fork tcp:host.docker.internal:9092
-# This will lead to a running process that we don't kill as long as the container's running
+# This will lead to a running process that we don't kill as long as the container's running     '
+
+// Accordingly, we need to run socat each time we start the container.
+// Another possibility would be to provide an extension to the Dockerfile. //https://github.com/provectus/kafka-ui/blob/master/kafka-ui-api/Dockerfile
+
+// Now, we can specify localhost:9092 as the bootstrap server within the Kafka UI
+// and should be able to view and create topics, as shown below:
+
+
+// 3.5. Use Kafka Java Client
+
+// We have to add the following Maven dependency to our project: // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+<dependency>
+    <groupId>org.apache.kafka</groupId>
+    <artifactId>kafka-clients</artifactId>
+    <version>3.9.0</version>
+</dependency>
+
 
 
 
