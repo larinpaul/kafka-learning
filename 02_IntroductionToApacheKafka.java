@@ -88,7 +88,21 @@ docker run -it -p 8080:8080 -e DYNAMIC_CONFIG_ENABLED=true provectuslabs/kafka-u
 
 // We can then open the UI in the browser using http://localhost:8080 and define a cluster, as this picture shows:
 
+// ...
 
+// We can setup this cointainer-internal port forwarding. e.g. using socat.
+// We have to install it within the container (Alpine Linux),
+// so we need toconnect to the container's bash with root permissions.
+// So we need these commands, beginning within the host system's command line:
+
+# Connect to the container's bash (find out the name with 'docker ps')
+docker exec -it --user=root <name-of-kafka-ui-container> /bin/sh
+# Now, we are connected to teh container's bash.
+# Let's install 'socat'
+apk add socat
+# Use socat to create the port forwarding
+socat tcp-listen:9092,fork tcp:host.docker.internal:9092
+# This will lead to a running process that we don't kill as long as the container's running
 
 
 
