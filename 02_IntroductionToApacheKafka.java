@@ -145,3 +145,18 @@ try (final Consumer<Long, String> consume = new KafkaConsumer<>(props)) {
 
 // 4. Basic Concept
 
+// We can differentiate Kafka clients into consumers and producers.
+// Producers send messages to Kafka, while consumers receive messages from Kafka.
+// They only receive messages by actively polling from Kafka.
+// Kafka itself is acting passivley.
+// This allows each consumer to have a uique performance without blocking Kafka.
+
+// ...
+
+// Consumers are part of a Consumer Group that Kafka identifies by a simple name.
+// Only one consumer of a consumer group will receive a message.
+// This allows scaling out consumers with the guarantee of only-once message delivery.
+
+// 
+
+
