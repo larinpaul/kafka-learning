@@ -184,5 +184,40 @@ try (final Consumer<Long, String> consume = new KafkaConsumer<>(props)) {
 
 // ...
 
-// 4.3. Topics & Partitions
+// Topics consist of partitions (at least one).
+
+// ...
+
+// Kafka can provide both ordering guarantees and load balancing over a pool of consumer processes.
+
+// One consumer will be assigned to one partition when it subscribes to the topic,
+// e.g. with the Java Kafka client API, as we have already seen:
+
+String topic = "my-first-topic";
+consumer.subscribe(Arrays.asList(topic));
+
+// However, for a consumer, it is possible to choose the partition(s) it wants to poll messages from:
+
+TopicPartition myPartition = new TopicPartition(topic, 1);
+consumer.assign(Arrays.asList(myPartition));
+
+// The disadvantage of this variant is that all group consumers have to use this,
+// so automatically assigning partitions to group consumers 
+// won't work in combination with single consumers that connect to a special partition.
+// Also, rebalancng is not possible in case of architectural changes like adding further consumers to the group.
+
+// Ideally, we have as many consumers as partitions,
+// so that every consumer can be assigned to exactly one of the partitions, as shown below:
+
+// ...
+
+// If we have more consumers than partitins, those consumers won't receive messages from any partition:
+
+// ...
+
+// If we have fewer consumers than partitions, consumers will receive messages from multiple partitions,
+// which conflicts with optimal load balancing:
+
+// ...
+
 
