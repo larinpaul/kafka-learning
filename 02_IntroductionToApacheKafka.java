@@ -157,6 +157,32 @@ try (final Consumer<Long, String> consume = new KafkaConsumer<>(props)) {
 // Only one consumer of a consumer group will receive a message.
 // This allows scaling out consumers with the guarantee of only-once message delivery.
 
-// 
 
+// 4.2. Messages
+
+// A message (we can also name it "record" or "event", depending on the use caes)
+// is the fundamental unit of data that Kafka processes.
+// Its payload can be of any binary format as well as text formats like plain text, Avro, XML, or JSON.
+
+// ...
+
+// SerDes // There are built-in SerDes, // https://kafka.apache.org/documentation/streams/developer-guide/datatypes.html
+// ut we can implement custom SerDes too.
+
+// ..
+
+// 4.3. Topics & Partitions
+
+// A topic is a logical channel or category to which producers publish messages.
+
+// ...
+
+// By default, the retention policy of a topic is 7 days, i.e. after 7 days,
+// Kafka deletes the messages automatically,
+// independent of delivering to consumers or not.
+// We can configure this if necessary. // https://www.baeldung.com/kafka-message-retention
+
+// ...
+
+// 4.3. Topics & Partitions
 
