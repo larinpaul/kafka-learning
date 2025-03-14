@@ -220,4 +220,14 @@ consumer.assign(Arrays.asList(myPartition));
 
 // ...
 
+// Each producer has its own partitioner, so if we want to ensure that messages are partitioned consistently within the topic,
+// we have to ensure that the partitioners of all producers work the same way,
+// or we should only work with a single producer.
+// ...
+
+
+// 4.4. Clusters and Partition Replicas
+
+
+
 
