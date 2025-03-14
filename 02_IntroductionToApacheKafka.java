@@ -228,6 +228,30 @@ consumer.assign(Arrays.asList(myPartition));
 
 // 4.4. Clusters and Partition Replicas
 
+// ...
+
+// We typically do not use a single Kafka Broker, but a Cluster of multiple brokers.
+
+// ...
+
+// For example, using the Kafka CLI, we could create a topic with 6 partitions, each of them syncronized on 3 brokers:
+sh kafka-topics.sh --bootstrap-server localhosh:9092 --create --topic my-replicated-topic --partitions 6 -- replication-factor 3
+
+// For example, a replication factor of three means, that the cluster is resilient for up to two replica failures (N-1 resiliency).
+// We have to ensure that we have at least as many borkers as we specify as the replication factor.
+// Otherwise, Kafka does not create the topic until the count of brokers increases.
+
+// For better efficiency, replication of a partition only occurs in one direction.
+// ... 
+
+// Partition leading is distributed to multiple brokers.
+// ...
+
+// Kafka uses Kraft (in earlier versions: Zookeeper) for the orchestration of all brokers within the cluster. // https://www.baeldung.com/kafka-shift-from-zookeeper-to-kraft
+
+
+// 4.4. Putting All Together
+
 
 
 
