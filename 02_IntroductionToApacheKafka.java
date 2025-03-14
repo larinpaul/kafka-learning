@@ -252,6 +252,14 @@ sh kafka-topics.sh --bootstrap-server localhosh:9092 --create --topic my-replica
 
 // 4.4. Putting All Together
 
+// If we put producers and consumers together with a cluster of three brokers that manage a single topic
+// with three partitions and a replication factor of 3, we'll get this architecture:
 
+// picture
+
+
+// 5. Ecosystem
+
+// ... 
 
 
