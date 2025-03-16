@@ -29,6 +29,10 @@
 // * log.retention.ms // Will take precedence because Kafka overrides a lower-precision value with a higher one.
 
 
+// 3.1. Basics
+
+// First, let's inspect the default value for retention by executing the grep command // https://www.baeldung.com/linux/grep-sed-awk-differences#grep // The grep command searches for lines matching a regex expression and prints those matching lines to the standard output. It is useful when we need a quick way to find out whether a particular pattern exists or not in the given input. // grep [OPTION] PATTERN [FILE...]
+// from the Apache Kafka directory: // https://kafka.apache.org/documentation/#quickstart
 
 
 
