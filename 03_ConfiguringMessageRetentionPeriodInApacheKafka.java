@@ -35,5 +35,6 @@
 // from the Apache Kafka directory: // https://kafka.apache.org/documentation/#quickstart
 
 
+// A topic resides within the broker and usually has different partitions
 
 
