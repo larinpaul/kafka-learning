@@ -34,6 +34,7 @@
 // First, let's inspect the default value for retention by executing the grep command // https://www.baeldung.com/linux/grep-sed-awk-differences#grep // The grep command searches for lines matching a regex expression and prints those matching lines to the standard output. It is useful when we need a quick way to find out whether a particular pattern exists or not in the given input. // grep [OPTION] PATTERN [FILE...]
 // from the Apache Kafka directory: // https://kafka.apache.org/documentation/#quickstart
 
+/*
 $ grep -o 'log.retention.[hms].*\=' config/server.properties
 log.retention.hours=168
 
@@ -42,8 +43,19 @@ log.retention.hours=168
 // To retain messages only for ten minutes, we can set the value of the log.retention.minutes property
 // in the config/server.properties:
 log.retention.minutes=10
-
+ */
 
 // A topic resides within the broker and usually has different partitions
 
+
+// 3.2. Retention Period for New Topic
+
+// The Apache Kafka package contains several shell scripts that we can use to perform administrative tasks.
+// We can use to perform administrative tasks.
+// We'll use them to create a helper script, function.sh,
+// that we'll use during the course of this tutorial.
+
+// Let's start by adding two functions in functions.sh to create a topic amd describe its configuration, respectively:
+
+// in 03_function.sh
 
