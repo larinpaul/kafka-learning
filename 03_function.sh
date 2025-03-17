@@ -7,4 +7,11 @@ function create_topic {
       --zookeeper localhost:2181
 }
 
+# Next, let's create two standalone scripts, create-topic.sh and get-topic-retention-time.sh:
+bash-5.1.# cat create-topic.sh
+#!/bin/bash
+. ./functions.sh
+topic_name="$1"
+create_topic "${topic_name}"
+exit $?
 
