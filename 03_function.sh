@@ -24,3 +24,16 @@ exit $?
 
 # We must note that describe_topic_config fill give all the properties required for the topic.
 # So, we used the awk one-liner to add a filter for the retention.ms property. -- https://www.baeldung.com/linux/awk-guide # AWK (/ɔːk/[4]) is a domain-specific language designed for text processing and typically used as a data extraction and reporting tool. Like seq and grep, it is a filter, and it is a standard feature of most Unit-like operating systems. a set of actions to be taken against streams of textual data # sed ("stream editor") # grep is a command-line utility for searching plaintext datasets for lines that match a regular expression.
+
+# Finally, let's start the Kafka environment # https://kafka.apache.org/documentation/#quickstart_startserver
+# and verify retention period configuration for a new sample topic:
+bash-5.1# ./create-topic.sh test-topic
+Created topic test-topic.
+bash-5.1# ./get-topic-retention-time.sh test-topic
+retention.ms=600000
+
+# Once the topic is created and described,
+# we'll notice that retention.ms is set to 600000 (ten minutes).
+# That's actually derived from the log.retention.minutes property
+# that we had earlier defined in theserver.properties file.
+
