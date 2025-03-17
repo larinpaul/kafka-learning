@@ -22,5 +22,5 @@ topic_name="$1"
 decsribe_topic_config "${topic_name}" | awk 'BEGIN{IFS="=";IRS=" "} /^[ ]*retention.ms/{print $1}'
 exit $?
 
-
-
+# We must note that describe_topic_config fill give all the properties required for the topic.
+# So, we used the awk one-liner to add a filter for the retention.ms property. -- https://www.baeldung.com/linux/awk-guide # AWK (/ɔːk/[4]) is a domain-specific language designed for text processing and typically used as a data extraction and reporting tool. Like seq and grep, it is a filter, and it is a standard feature of most Unit-like operating systems. a set of actions to be taken against streams of textual data # sed ("stream editor") # grep is a command-line utility for searching plaintext datasets for lines that match a regular expression.
