@@ -15,3 +15,12 @@ topic_name="$1"
 create_topic "${topic_name}"
 exit $?
 
+bash-5.1# cat get-topic-retention-time.sh
+#!/bin/baash
+. ./functions.sh
+topic_name="$1"
+decsribe_topic_config "${topic_name}" | awk 'BEGIN{IFS="=";IRS=" "} /^[ ]*retention.ms/{print $1}'
+exit $?
+
+
+
