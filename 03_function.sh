@@ -42,3 +42,8 @@ retention.ms=600000
 
 # Once the Broker server is started, log.retention.{hours|minutes|ms} server-level properties becomes read-only.
 
+# On the other hand, we get access to the retention.ms property, which we can tune at the topic-level.
+
+
+
+
