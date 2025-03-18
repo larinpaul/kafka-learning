@@ -44,6 +44,17 @@ retention.ms=600000
 
 # On the other hand, we get access to the retention.ms property, which we can tune at the topic-level.
 
+# Let's add a method in our functions.sh script to configure a property of a topic:
+
+funcion alter_topic_config {
+  topic_name="$1"
+  config_name="$2"
+  config_value="$3"
+  ./bin/kafka-configs.sh --alter \
+    --add-config ${config_name}=${config_value} \
+    --bootstrap-server=0.0.0.0:9092 \
+    --topic ${topic_name}
+}
 
 
 
