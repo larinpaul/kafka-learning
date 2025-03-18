@@ -35,5 +35,5 @@ retention.ms=600000
 # Once the topic is created and described,
 # we'll notice that retention.ms is set to 600000 (ten minutes).
 # That's actually derived from the log.retention.minutes property
-# that we had earlier defined in theserver.properties file.
+# that we had earlier defined in the server.properties file.
 
