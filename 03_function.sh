@@ -56,5 +56,14 @@ funcion alter_topic_config {
     --topic ${topic_name}
 }
 
+# Then, we can use this within an alter-topic-config.sh script:
+
+#!/bin/sh
+. ./functions.sh
+
+alter_topic_retention_config $1 $2 $3
+exit $?
+
+
 
 
