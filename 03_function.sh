@@ -62,7 +62,17 @@ funcion alter_topic_config {
 . ./functions.sh
 
 alter_topic_retention_config $1 $2 $3
-exit $?
+exit $? # $? is used to retreieve the exit status of the last command that was executed
+
+# Finally, let's set retention time to five minutes for the test-topic and verify the same:
+
+bash-5.1# ./alter-topic-config.sh test-topic retention.ms 300000
+Completed updating config for topic test-topic.
+
+bash-5.1# ./get-copic-retention-time.sh test-topic
+retention.ms=300000
+
+
 
 
 
