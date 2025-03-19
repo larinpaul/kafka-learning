@@ -78,4 +78,17 @@ retention.ms=300000
 # So far, we’ve seen how we can configure the retention period of a message within a Kafka topic.
 # It’s time to validate that a message indeed expires after the retention timeout.
 
+# Let's add produce_message and consume_message functions in the functions.sh. 
+# Internally, these use the kafka-console-producer.sh and kafka-console-consumer.sh, respectively,
+# for producing/consuming a message:
+
+function produce_message {
+  topic_name="$1"
+  message="$2"
+  echo "${message}" | ./bin/kafka-console-producer.sh \
+  --boot
+}
+
+
+
 
