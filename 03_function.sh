@@ -115,4 +115,18 @@ message="$2"
 produce_message ${topic_name} ${message}
 exit $?
 
+# Finally, let's have a standalone message consumer.
+
+bash-5.1# cat consumer.sh
+#!/bin/sh
+. ./functions.sh
+topic_name="$1"
+timeout="$2"
+
+consume_message ${topic_name} $timeout
+exit $?
+
+
+
+
 
