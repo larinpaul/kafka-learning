@@ -90,6 +90,16 @@ function produce_message {
   --topic ${topic_name}
 }
 
+function consume_message {
+  topic_name="$1"
+  timeout="$2"
+  ./bin/kafka-console-consumer.sh \
+  --bootstrap-server=0.0.0.0:9092 \
+  --from-beginning \
+  --topic ${topic_name} \
+  --max_messages 1 \
+  --timeout-ms $timeout
+}
 
 
 
