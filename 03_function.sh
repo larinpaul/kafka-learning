@@ -101,5 +101,18 @@ function consume_message {
   --timeout-ms $timeout
 }
 
+# We must note that the consumer is always reading messages from the beginning
+# as we need a consumer that reads any available message in Kafka.
+
+# Next, let's create a standalone message producer.
+
+bash-5.1# cat produer.sh
+#!/bin/sh
+. ./functions.sh
+topic_name="$1"
+message="$2"
+
+produce_message ${topic_name} ${message}
+exit $?
 
 
