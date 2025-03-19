@@ -86,7 +86,8 @@ function produce_message {
   topic_name="$1"
   message="$2"
   echo "${message}" | ./bin/kafka-console-producer.sh \
-  --boot
+  --bootstrap-server=0.0.0.0:9092 \
+  --topic ${topic_name}
 }
 
 
