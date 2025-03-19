@@ -73,7 +73,9 @@ bash-5.1# ./get-copic-retention-time.sh test-topic
 retention.ms=300000
 
 
+# 5. Validation
 
-
+# So far, we’ve seen how we can configure the retention period of a message within a Kafka topic.
+# It’s time to validate that a message indeed expires after the retention timeout.
 
 
