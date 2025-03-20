@@ -141,5 +141,18 @@ Processed a total of 1 messages
 
 # So, we can see that the consumer is repeatedly consuming any available message.
 
+# Now, let's introduce a sleep delay of five minutes and then attempt to consume the message:
+
+bash-5.1# sleep 300 && ./consumer.sh test-topic 10000
+[2021-02-6 21:55:00,896] ERROR Error processing message, terminating consumer process:
+(kafka.tools.ConsoleConsumer$)
+org.apache.kafka.common.errors.TimeoutException
+Processed a total of 0 messages
+
+# As expected, the consumer didn't find any message to consume because the message 
+# has crossed its retention period.
+
+
+# 6. Limitations
 
 
