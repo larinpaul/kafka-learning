@@ -127,6 +127,19 @@ consume_message ${topic_name} $timeout
 exit $?
 
 
+# 5.2. Message Expiry
+
+# Now that we have out basic setup ready, let's produce a single message and consume it twice instantly:
+
+bash-5.1# ./producer.sh "test-topic-2" "message1"
+bash-5.3# ./consumer.sh test-topic-2 10000
+message1
+Processed a total of 1 messages
+bash-5.3# ./consumer.sh test-topic-2 10000
+message1
+Processed a total of 1 messages
+
+# So, we can see that the consumer is repeatedly consuming any available message.
 
 
 
