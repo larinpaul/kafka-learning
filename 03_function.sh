@@ -163,4 +163,10 @@ Processed a total of 0 messages
 # is lower than the property value of retention.ms for any given topic.
 
 
+# 7. Conclusion
+
+# In this tutorial, we explored Apache Kafka to understand the time-based retention policy for messages.
+# In the process, we created simple shell scripts to simplify the administrative activities.
+# Later, we created a standalone consumer and producer to validate the message expiry after the retention period.
+
 
