@@ -155,4 +155,12 @@ Processed a total of 0 messages
 
 # 6. Limitations
 
+# Internally, the Kafka Broker maintains another property called log.retention.check.interval.ms.
+# This property decides the frequency at which messages are checked for expiry.
+
+# So, to keep the retention policy effection, we must ensure
+# that the value of the log.retention.check.interval.ms
+# is lower than the property value of retention.ms for any given topic.
+
+
 
