@@ -19,4 +19,10 @@
 // In other words, 
 // a container is an application context responsible for instantiating, configuring, and assembling the beans.
 
+// In the context of Apahe Kafka, a listener container is a container that contains a consumer,
+// or listener, of Kafka messages.
+// Further, Spring for Apache Kafka uses a container factory to create message listener containers.
+// We use the @KafkaListener annotation to designate a bean method as a message listener 
+// for a listener container.
+
 
