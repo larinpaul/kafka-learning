@@ -24,5 +24,9 @@
 // Further, Spring for Apache Kafka uses a container factory to create message listener containers.
 // We use the @KafkaListener annotation to designate a bean method as a message listener 
 // for a listener container.
+// Accordingly, a container factory creates listener containers for bean methods annotated with @KafkaListener.
+// The Spring for Apache Kafka frameworkprovides interfaces and classes to manage the instantiation of listener containers:
+
+
 
 
