@@ -48,5 +48,21 @@
     <version>3.3.1</version>
 </dependency>
 
+// And configure the spring-boot-maven-plugin as follows:
+<plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <configuration>
+        <mainClass>com.baeldung.spring.kafka.KafkaApplication</mainClass>
+    </configuration>
+</plugin>
+
+// We can find the latest version of this artifact here. // https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka
+// Our example application will be a Spring Boot application.
+// We assume that the server has started using the default configuration
+// and that we have not changed any server ports.
+
+
+
 
 
