@@ -63,6 +63,16 @@
 // and that we have not changed any server ports.
 
 
+// 4. Configuring Topics
+
+// Previously, we ran command-line tools to create Kafka "topics":
+$ bin/kafka-topics.sh --create
+  --zookeeper localhost:2181
+  --replication-factor 1 --partitions 1
+  --topic mytopic
+
+
+
 
 
 
