@@ -71,6 +71,30 @@ $ bin/kafka-topics.sh --create
   --replication-factor 1 --partitions 1
   --topic mytopic
 
+// But with the introduction of AdminClient in Kafka,
+// we can now create topics programmatically.
+// We need to add the KafkaAdmin Spring bean,
+// which will automatically add topics for all beans of type NewTopic.
+
+@Configuration
+public class KafkaTopicConfig {
+    
+    @Value(value = "${spring.kafka.bootstrap-servers}")
+    private String bootstapAddress;
+
+    @Bean
+    public KafkaAdmin kafkaAdmin() {
+        Map<String, Object> configs = new HashMap<>();
+        configs.pur(AdminClientConfig.BOOTSTAP_SERVERS_CONFIG, bootstrapAddress);
+        return new KafkaAdmin(configs);
+    }
+
+    @Bean
+    public NewTopic topic1() {
+        return new NewTopic("baeldung", 1 (short) 1);
+    }
+
+}
 
 
 
