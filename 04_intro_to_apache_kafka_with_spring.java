@@ -38,5 +38,15 @@
 // An implementation class used to create a ConcurrentMessageListenerContainer
 
 
+// 3. Installation and Setup
+
+// To download and install Kafka, please refer to the official guide here. // https://kafka.apache.org/quickstart
+// We also need to add the spring-kafka dependency to our pom.xml:
+<dependency>
+    <groupId>org.springframework.kafka</groupId>
+    <artifactId>spring-kafka</artifactId>
+    <version>3.3.1</version>
+</dependency>
+
 
 
