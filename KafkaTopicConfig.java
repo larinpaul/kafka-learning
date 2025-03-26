@@ -97,6 +97,17 @@ public class KafkaTopicConfig {
 }
 
 
+// 5. Producing Messages
+
+// To create messsages, we first need to configure a ProducerFactory. // http://docs.spring.io/spring-kafka/api/org/springframework/kafka/core/ProducerFactory.html
+// This sets the strategy for creating Kafka Producer instances. // https://kafka.apache.org/0100/javadoc/org/apache/kafka/clients/producer/Producer.html
+
+// Then, we need a KafkaTemplate, // https://docs.spring.io/spring-kafka/api/org/springframework/kafka/core/KafkaTemplate.html
+// which wraps a Producer instance and provides convenience methods for sending messages to Kafka topics.
+
+
+
+
 
 
 
