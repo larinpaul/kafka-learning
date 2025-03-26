@@ -106,6 +106,14 @@ public class KafkaTopicConfig {
 // which wraps a Producer instance and provides convenience methods for sending messages to Kafka topics.
 
 
+// Producer instances are thread-safe.
+// So, using a single instance throughout an application context
+// will give higher performance.
+// Consequently, KafkaTemplate instances are also thread-safe,
+// and the use of one instance is recommended.
+
+
+
 
 
 
