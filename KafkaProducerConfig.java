@@ -140,6 +140,16 @@ public class KafkaProducerConfig {
 
 }
 
+// 5.2. Publishing Messages
+
+// We can send messages using the KafkaTemplate class:
+
+@Autowired
+private KafkaTemplate<String, String> kafkaTemplate;
+
+public void sendMessage(String msg) {
+    kafkaTemplate.send(topicName, msg);
+}
 
 
 
