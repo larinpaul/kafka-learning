@@ -151,6 +151,29 @@ public void sendMessage(String msg) {
     kafkaTemplate.send(topicName, msg);
 }
 
+// The send API returns a CompletableFuture object.
+// If we want to block the sending thread and get the result about the sent message,
+// we can call the get API of the CompletableFuture object.
+// The thread will wait for the result, but it will slow down the producer.
+
+// Kafka is a fast-stream processing platform.
+// Therefore, it's better to handle the results asynchronously
+// so that the sbsequent messages do not wait for the result of the previous message.
+
+// We can do this through a callback:
+public void sendMessage(String message) {
+    CompletableFuture<SendResult<String, String>> future = kafkaTemplate.send(topicName, message);
+    future.whenComplete((result, ex) -> {
+        if (ex == null) {
+            System.out.println("Sent message=[" + message +
+                "] with offset=[" + result.getRecordMetadate().offset() + "]");
+        } else {
+            System.out.println("Unable to send message=[" + message + "] due to : " + ex.getMessage());
+        }
+    });
+}
+
+
 
 
 
