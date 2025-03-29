@@ -174,6 +174,17 @@ public void sendMessage(String message) {
 }
 
 
+// 6. Consuming Messages
+
+// 6.1. Consumer Configuration
+
+// To consume messages, we need to configure a ConsumerFactory and a KafkaListenerContainerFactory.
+// Once these beans are available in the Spring Bean factory, POJO-based consumers
+// can be configured using @KafkaListener annotation.
+
+// @EnableKafka annotation is required on the configuration class 
+// to enable the detection of @KafkaListener annotation on spring-managed beans:
+
 
 
 
