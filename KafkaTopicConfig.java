@@ -220,8 +220,17 @@ public class KafkaConsumerConfig {
         factory.setConsumerFactory(consumerFactory());
         return factory;
     }
+}
 
 
+// 6.2. Consuming Messages
+
+// Let's configure a POJO-based listener, also called consumer,
+// using @KafkaListener annotation:
+
+@KafkaListener(topics = "topicName", groupId = "foo")
+public void listenGroupFoo(String message) {
+    System.out.println("Received Message in group foo: ");
 }
 
 
