@@ -242,5 +242,12 @@ public void listenGroupFoo(String message) {
 // Spring also supports retrieval of one or more messages
 // using the @Header annotation in the listener: // http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/messaging/handler/annotation/Header.html
 
-
+@KafkaListener(topics = "topicName")
+public void listenWithHeaders(
+    @Payload String message,
+    @Header(KafkaHeaders.RECEIVED_PARTITION_ID) int partition) {
+        System.out.println(
+            "Received Message: " + "message "
+            + "from partition: " + partition);
+}
 
