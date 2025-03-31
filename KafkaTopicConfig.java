@@ -239,4 +239,8 @@ public void listenGroupFoo(String message) {
 
 @KafkaListener(topics = "topic1, topic2", groupId = "foo")
 
+// Spring also supports retrieval of one or more messages
+// using the @Header annotation in the listener: // http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/messaging/handler/annotation/Header.html
+
+
 
