@@ -233,5 +233,10 @@ public void listenGroupFoo(String message) {
     System.out.println("Received Message in group foo: ");
 }
 
+// We can implement multiple listeners for a topic,
+// each with a different group ID.
+// Furthermore, one consumer can listen for messages from various topics:
+
+@KafkaListener(topics = "topic1, topic2", groupId = "foo")
 
 
