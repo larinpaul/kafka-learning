@@ -251,3 +251,15 @@ public void listenWithHeaders(
             + "from partition: " + partition);
 }
 
+
+// 6.3. Consuming Messages from a Specific Partition
+
+// Notice that we created the topic baeldung wiht only one partition.
+
+// For a topic with multiple partitions, howener,
+// a @KafkaListener can explicitly subscribe to a particular partition
+// of a topic with an initial offset:
+
+
+
+
