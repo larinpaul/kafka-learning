@@ -282,6 +282,8 @@ public void listenToPartition(
 // If we don't need to set the offset, we can use the partitions property of @TopicPartition annotation
 // to set only the partitions without the offset:
 
+@KafkaListener(topicPartitions
+    = @TopicPartitions(topic = "topicName", partitions = { "0", "1" }))
 
 
 
