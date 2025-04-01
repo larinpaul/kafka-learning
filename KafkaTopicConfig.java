@@ -260,6 +260,22 @@ public void listenWithHeaders(
 // a @KafkaListener can explicitly subscribe to a particular partition
 // of a topic with an initial offset:
 
+@KafkaListener(
+    topicPartitions = @TopicPartition(topic = "topicName",
+    partitionOffsets = {
+        @PartitionOffset(partition = "0", initialOffset = "0"),
+        @PartitionOffset(partition = "3", initialOffset = "3")}),
+    containerFactory = "partitionKafkaListenerContainerFactory")
+public void listenToPartition(
+    @Payload String message,
+    @Header(KafkaHeaders.RECEIVED_PARTITION_ID) int partition) {
+        System.out.println(
+            "Received Message: " + message +
+            "from partition: " + partition
+        );
+}
+
+
 
 
 
