@@ -275,6 +275,13 @@ public void listenToPartition(
         );
 }
 
+// Since the initialOffset has been set to 0 in this listener, 
+// all the previously consumer messages from partitions 0 and 3
+// will be re-consumer every time this listener is initialized.
+
+// If we don't need to set the offset, we can use the partitions property of @TopicPartition annotation
+// to set only the partitions without the offset:
+
 
 
 
