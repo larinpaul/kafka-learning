@@ -291,6 +291,16 @@ public void listenToPartition(
 // We can configure listeners to consume specific message content by adding a custom filter.
 // This can be done by setting a RecordFileStrategy to the KafkaListenerContainerFactory.
 
+@Bean
+public ConcurrentKafkaListenerContainerFactory<String, String>
+        filterKafkaListenerContainerFactory() {
+            ConcurrentKafkaListenerContainerFactory<String, String> factory =
+                    new ConcurrentKafkaListenerContainerFactory<>();
+                    factory.setConsumerFactory(consumerFactory());
+                    factory.setRecordFilterStrategy(
+                        record -> record.value().contains("World"));
+            return factory;
+        }
 
 
 
