@@ -286,5 +286,12 @@ public void listenToPartition(
     = @TopicPartitions(topic = "topicName", partitions = { "0", "1" }))
 
 
+// 6.4. Adding Message Filter for Listeners
+
+// We can configure listeners to consume specific message content by adding a custom filter.
+// This can be done by setting a RecordFileStrategy to the KafkaListenerContainerFactory.
+
+
+
 
 
