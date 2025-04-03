@@ -333,6 +333,25 @@ public class Greeting {
 }
 
 
+// 7.1. Producting Custom Messages
+
+// In this example, we will use JsonSerializer. // http://docs.spring.io/spring-kafka/api/org/springframework/kafka/support/serializer/JsonSerializer.html
+// Let's look at the code for ProducerFactory and KafkaTemplate:
+
+@Bean
+public ProducerFactory<String, Greeting> greetingProducerFactory() {
+    // ...
+    configProps.put(
+        ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
+        JsonSerializer.class
+    );
+    return new DefaultKafkaProducerFactory<>(configProps);
+}
+
+@Bean
+public KafkaTemplate<String, Greeting> greetingKafkaTemplate() {
+    return new KafkaTemplate<>(greetingProducerFactory());
+}
 
 
 
