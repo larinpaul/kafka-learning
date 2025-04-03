@@ -302,6 +302,20 @@ public ConcurrentKafkaListenerContainerFactory<String, String>
             return factory;
         }
 
+// We can configure a listener to use this container factory:
+
+@KafkaListener(
+    topics = "topicName",
+    containerFactory = "filterKafkaListenerContainerFactory")
+    public void listenWithFilter(String message) {
+        System.out.println("Received Message in filtered listener: " + message);
+    }
+
+// The listener discards all the messages matching the filter.
+
+
+// 7. Custom Message Converters
+
 
 
 
