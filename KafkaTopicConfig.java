@@ -316,6 +316,23 @@ public ConcurrentKafkaListenerContainerFactory<String, String>
 
 // 7. Custom Message Converters
 
+// So far, we have only covered sending and receiving Strings as messages.
+// However, we can also send and receive custom Java objects.
+// This requires configuring the appropriate serializer in ProducerFactory
+// and a deserializer in ConsumeFactory.
+
+// Let's look at a simple bean class, which we will send as messages:
+
+public class Greeting {
+
+    private String msg;
+    private String name;
+
+    // standard getters, setters and constructor
+
+}
+
+
 
 
 
