@@ -353,5 +353,9 @@ public KafkaTemplate<String, Greeting> greetingKafkaTemplate() {
     return new KafkaTemplate<>(greetingProducerFactory());
 }
 
+// We can use this new KafkaTemplate to send the Greeting message:
+
+kafkaTemplate.send(topicName, new Greeting("Hello," "World"));
+
 
 
