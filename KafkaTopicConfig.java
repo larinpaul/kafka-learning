@@ -395,3 +395,16 @@ public ConsumerFactory<String, Greeting> greetingConsumerFactory() {
     <version>2.18.2</version>
 </dependency>
 
+
+// Instead of using the latest version of Jackson, it's recommended to use the version
+// that is added to the pom.xml of spring-kafka.
+
+// Finally, we need to write a listener to consume Greeting messages:
+
+@KafkaListener(
+    topics = "topicName",
+    containerFactory = "greetingKafkaListenerContainerFactory")
+    public void greetingListener(Greeting greeting) {
+        // process greeting message
+    }
+
