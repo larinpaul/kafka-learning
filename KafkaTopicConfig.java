@@ -358,4 +358,30 @@ public KafkaTemplate<String, Greeting> greetingKafkaTemplate() {
 kafkaTemplate.send(topicName, new Greeting("Hello," "World"));
 
 
+// 7.2. Consuming Custom Messages
+
+// Similarly, let's modify the ConsumerFactory and KafkaListenerContainerFactory 
+// to deserialize the Greeting message correctly:
+
+@Bean
+public ConsumerFactory<String, Greeting> greetingConsumerFactory() {
+    // ...
+    return new DefaultKafkaConsumerFactory<>(
+        props,
+        new StringDeserializer(),
+        new JsonDeserializer<>(Greeting.class)
+    );
+
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, Greeting>
+            greetingKafkaListenerContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, Greeting> factory =
+                new ConcurrentKafkaListenerContainerFactory<>();
+        factory.setConsumerFactory(greetingConsumerFactory());
+        return factory;
+    }
+
+}
+
+
 
