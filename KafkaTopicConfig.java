@@ -384,4 +384,14 @@ public ConsumerFactory<String, Greeting> greetingConsumerFactory() {
 }
 
 
+// The spring-kafka JSON serializer and deserializer use the Jackson libreary, // https://www.baeldung.com/jackson
+// which is also an optional Maven dependency for the spring-kafka project.
+
+// So let's add it to our pom.xml:
+
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.18.2</version>
+</dependency>
 
