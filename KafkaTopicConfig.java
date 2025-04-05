@@ -408,3 +408,24 @@ public ConsumerFactory<String, Greeting> greetingConsumerFactory() {
         // process greeting message
     }
 
+
+// 8. Multi-Method Listeners
+
+// Let's now see how we can configure our application to send various kinds of objects 
+// to the same topic and then consume them
+
+// First, we'll add a new class, Farewell:
+
+public class Farewell {
+
+    private String message;
+    private Integer remainingMinutes;
+
+    // standard getters, setters and constructor
+
+}
+
+// We'll need some extra configuration to be able to send both Greeting and Farewell objects
+// to the same topic.
+
+
