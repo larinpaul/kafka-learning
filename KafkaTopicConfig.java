@@ -435,7 +435,26 @@ public class Farewell {
 
 configProps.put(JsonSerializer.TYPE_MAPPINGS, "greeting:com.baeldung.spring.kafka.Greeting, farewell:com.baeldung.spring.kafka.Farewell");
 
-// This way, the library will find in the type header w
+// This way, the library will fill in the type header 
+// with the corresponding class name.
+// As a result, the ProducerFactory and KafkaTemplate look like this:
+
+@Bean
+public ProducerFactory<String, Object> multiTypeProducerFactory() {
+    Map<String, Object> configProps = new HashMap<>();
+    configProps.put(ProducerConfig.BOOTRSTAP_SERVERS_CONFIG, bootstrapAddress);
+    configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+    configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+    configProps.put(JsonSerializer.TYPE_MAPPINGS, "greeting:com.baeldung.spring.kafka.Greeting, farewell:com.baeldung.spring.kafka.Farewell");
+    return new DefaultKafkaProducerFactory<>(configProps);  
+}
+
+@Bean
+public KafkaTemplate<String, Object> multiTypeKafkaTemplate() {
+    return new KafkaTemplate<>(multiTypeProducerFactory());
+}
+
+
 
 
 
