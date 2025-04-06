@@ -429,3 +429,14 @@ public class Farewell {
 // to the same topic.
 
 
+// 8.1. Set Mapping Types in the Producer
+
+// In hte producer, we have to configure the JSON type mapping: // https://www.baeldung.com/java-json
+
+configProps.put(JsonSerializer.TYPE_MAPPINGS, "greeting:com.baeldung.spring.kafka.Greeting, farewell:com.baeldung.spring.kafka.Farewell");
+
+// This way, the library will find in the type header w
+
+
+
+
