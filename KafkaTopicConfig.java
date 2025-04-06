@@ -454,6 +454,11 @@ public KafkaTemplate<String, Object> multiTypeKafkaTemplate() {
     return new KafkaTemplate<>(multiTypeProducerFactory());
 }
 
+// We can use this KafkaTemplate to send a Greeting, Farewell,
+// or any Object to the topic: // https://www.baeldung.com/java-classes-objects
+multiTypeKafkaTemplate.send(multiTypeTopicName, new Greeting("Greetings", "World"));
+multiTypeKafkaTemplate.send(multiTypeTopicName, new Farewell("Farewell", 25));
+multiTypeKafkaTemplate.send(multiTypeTopicName, "Simple string message");
 
 
 
