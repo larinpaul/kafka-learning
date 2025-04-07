@@ -461,6 +461,11 @@ multiTypeKafkaTemplate.send(multiTypeTopicName, new Farewell("Farewell", 25));
 multiTypeKafkaTemplate.send(multiTypeTopicName, "Simple string message");
 
 
+// 8.2. Use a Custom MessageConverter in the Consumer
+
+// To be able to deserialize the incuming message,
+// we'll need to provide our Consumer with a custom MessageConverter.
+
 
 
 
