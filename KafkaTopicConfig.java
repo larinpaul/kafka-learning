@@ -466,6 +466,12 @@ multiTypeKafkaTemplate.send(multiTypeTopicName, "Simple string message");
 // To be able to deserialize the incuming message,
 // we'll need to provide our Consumer with a custom MessageConverter.
 
+// Behind the scenes, the MessageConverter relies on a Jackson2JavaTypeMapper.
+// By default, the mapper infers the type of the received objects:
+// on the contrary, we need to tell it explicitly to use the type header
+// to determine the target class for deserialization:
+
+typeMapper.setTypePrecedence(Jackson2JavaTypeMapper.TypePrecedence.TYPE_ID);
 
 
 
