@@ -482,5 +482,16 @@ mappings.put("greeting", Greeting.class);
 mappings.put("farewell", Farewell.class);
 typeMapper.setIdClassMapping(mappings);
 
+// Lastly, we need to configure the packages trusted by the mapper.
+// We have to make sure that it contains the location of the target classes:
+
+typeMapper.addTrustedPackages("com.baeldung.spring.kafka");
+
+// As a result, here is the final definition of this MessageConverter:
+
+
+
+
+
 
 
