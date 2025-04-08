@@ -473,5 +473,14 @@ multiTypeKafkaTemplate.send(multiTypeTopicName, "Simple string message");
 
 typeMapper.setTypePrecedence(Jackson2JavaTypeMapper.TypePrecedence.TYPE_ID);
 
+// We also need to provide the reverse mapping information.
+// Finding "greeting" in the type header identifies a Greeting object,
+// whereas "farewell" corresponds to a Farewell object:
+
+Map<String, Class<?>> mappings = new HashMap<>();
+mappings.put("greeting", Greeting.class);
+mappings.put("farewell", Farewell.class);
+typeMapper.setIdClassMapping(mappings);
+
 
 
