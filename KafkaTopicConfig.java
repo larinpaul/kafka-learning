@@ -489,7 +489,19 @@ typeMapper.addTrustedPackages("com.baeldung.spring.kafka");
 
 // As a result, here is the final definition of this MessageConverter:
 
-
+@Bean
+public RecordMessageConverter multiTypeConverter() {
+    StringJsonMessageConverter converter = new StringJsonMessageConverter();
+    DefaultJackson2JavaTypeMapper typeMapper = new DefaultJackson2JavaTypeMapper();
+    typeMapper.setTypePrecedence(Jackson2JavaTypeMapper.TypePrecedence.TYPE_ID);
+    typeMapper.addTrustedPackages("com.baeldung.spring.kafka");
+    Map<String, Class<?>> mappings = new HashMap<>();
+    mappings.put("greeting", Greeting.class);
+    mappings.put("farewell", Farewell.class);
+    typeMapper.setIdClassMapping(mappings);
+    converter.setTypeMapper(typeMapper);
+    return converter;
+}
 
 
 
