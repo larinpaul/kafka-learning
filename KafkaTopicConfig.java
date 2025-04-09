@@ -503,6 +503,15 @@ public RecordMessageConverter multiTypeConverter() {
     return converter;
 }
 
+// We now need to tell our ConcurrentKafkaListenerContainerFactory to use the MessageConverter
+// and a rather basic ConsumerFactory.
+
+@Bean
+public ConsumerFactory<String, Object> multiTypeConsumerFactory() {
+    HashMap<String, Object> props = new HashMap<>();
+}
+
+
 
 
 
