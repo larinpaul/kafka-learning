@@ -509,6 +509,10 @@ public RecordMessageConverter multiTypeConverter() {
 @Bean
 public ConsumerFactory<String, Object> multiTypeConsumerFactory() {
     HashMap<String, Object> props = new HashMap<>();
+    props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
+    props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+    props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
+    return new DefaultKafkaConsumerFactory<>(props);
 }
 
 
