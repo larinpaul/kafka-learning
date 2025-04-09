@@ -515,8 +515,13 @@ public ConsumerFactory<String, Object> multiTypeConsumerFactory() {
     return new DefaultKafkaConsumerFactory<>(props);
 }
 
-
-
+@Bean
+public ConcurrentKafkaListenerContainerFactory<String, Object> multiTypeKafkaListenerContainerFactory() {
+    ConcurrentKafkaListenerContainerFactory<String, Object> factory = new ConcurrentKafkaListenerContainerFactory<String, Object> factory = new ConcurrentListenerContainerFactory<>();
+    factory.setConsumerFactory(multiTypeConsumerFactory());
+    factory.setRecordMessageConverter(multiTypeConverter());
+    return factory;
+}
 
 
 
