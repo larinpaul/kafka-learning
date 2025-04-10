@@ -529,5 +529,10 @@ public ConcurrentKafkaListenerContainerFactory<String, Object> multiTypeKafkaLis
 // Last but not least, in our KafkaListener, we'll create a handler method to retrieve every possible object.
 // Each handler will need to be annotated with @KafkaHandler
 
+// As a final note, let's point out that we can also define a default handler for objects
+// that can't be bound to one of the Greeting or Farewell classes:
+
+
+
 
 
