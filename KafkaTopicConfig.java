@@ -532,7 +532,26 @@ public ConcurrentKafkaListenerContainerFactory<String, Object> multiTypeKafkaLis
 // As a final note, let's point out that we can also define a default handler for objects
 // that can't be bound to one of the Greeting or Farewell classes:
 
+@Component
+@KafkaListener(id = "multiGroup", topics = "multiType")
+public class MultiTypeKafkaListener {
 
+    @KafkaHandler
+    public void handleGreeting(Greeting greeting) {
+        System.out.println("Greeting received: " + greeting);
+    }
+
+    @KafkaHandler
+    public void handleF(Farewell farewell) {
+        System.out.println("Farewell received: " + farewell);
+    }
+
+    @KafkaHandler(isDefault = true)
+    public void unknown(Object object) {
+        System.out.println("Unknown type received: " + object);
+    }
+
+}
 
 
 
