@@ -550,8 +550,15 @@ public class MultiTypeKafkaListener {
     public void unknown(Object object) {
         System.out.println("Unknown type received: " + object);
     }
-
 }
+
+// 9. Conclusion
+
+// Here, we covered the basics of Spring support for Apache Kafka.
+// We briefly looked at the classes used for sending and receiving messages.
+
+// Before running the code, please ensure that the Kafka server is running 
+// and that the topics are created manually.
 
 
 
