@@ -524,4 +524,10 @@ public ConcurrentKafkaListenerContainerFactory<String, Object> multiTypeKafkaLis
 }
 
 
+// 8.3. Use @KafkaHandler in the Listener
+
+// Last but not least, in our KafkaListener, we'll create a handler method to retrieve every possible object.
+// Each handler will need to be annotated with @KafkaHandler
+
+
 
