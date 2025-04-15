@@ -104,4 +104,17 @@ output {
 // the output will be encoded in JSON format in the processed-log.json file. 
 
 
+// Let's see an output example:
+{
+    "message":["2024-10-12 10:05:32 ERROR Database connection failed", "Database connection failed"],
+    "host":{"name":"baeldung"},"@version":"1"
+}
+{
+    "message":["2024-10-12 10:10:45 WARM Disk space running low","Disk space running low"],
+    "host":{"name":"baeldung"},"@version":"1"
+}
+{
+    "message":["2024-10-12 10:01:14 INFO User login successful","User login successful"],
+    "host":{"name":"baeldung"},"@version":"1"
+}
 
