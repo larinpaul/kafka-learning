@@ -30,3 +30,26 @@
 // and have confidence in our understandng of the publisher-subscriber model. // https://www.baeldung.com/cs/publisher-subscriber-model
 
 
+// 3. Logstash
+
+// Let's look at the main Logstash components and a command-line example to process a log file.
+
+// 3.1. Logstash Components
+
+// Logstash is an open-source data processing pipeline 
+// with the ELK Stack used to collect, process, and forward data from multiple sources.
+// It's composed of several core components that work together
+// to collect, transform and output data:
+// 1. Inputs: These bring data into Logstash from various sources 
+// such as log filed, databases, message queues like Kafka, or cloud services.
+// Inputs define where the raw data comes from.
+// 2. Filters: These components process and transform the data. 
+// Common filters include Grok for pasring unstructured data, // https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html
+// 
+
+
+
+
+
+
+
