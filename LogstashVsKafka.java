@@ -70,6 +70,30 @@
 2024-10-12 10:04:32 ERROR Database connection failed
 2024-10-12 10:10:45 WARN Disk space running low
 
+// We can then run the logstash -e command by providing a configuration:
+
+$ sudo logstash -e '
+input {
+    file {
+        path => "/tmp/example.log"
+        start_position => "beginning"
+        sincedb_path => "/dev/null"
+    }
+}
+filter {
+    grok {
+        match => { "message" => "%{TIMESTAMP_ISO8601:timestamp} %{LOGLEVEL:loglevel} %{GREEDYDATA:message}" }
+    }
+    mutate {
+        remove_field => ["log", "timestamp", "event", "@timestamp"]
+    }
+}
+output {
+    file {
+        path => "/tmp/processed-logs.json"
+        codec => json_lines
+    }
+}'
 
 
 
