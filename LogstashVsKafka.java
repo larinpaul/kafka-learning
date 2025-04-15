@@ -61,7 +61,14 @@
 // for centralizing logs, transforming data, and integrating with various external systems.
 
 
+// 3.2. Logstash Example
 
+// Let's give an example of how we process an input file to an output in JSON format.
+// Let's create an example.log input file in the /tmp directory:
+
+2024-10-12 10:01:15 INFO User login successful
+2024-10-12 10:04:32 ERROR Database connection failed
+2024-10-12 10:10:45 WARN Disk space running low
 
 
 
