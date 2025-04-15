@@ -118,3 +118,7 @@ output {
     "host":{"name":"baeldung"},"@version":"1"
 }
 
+// As we cansee, the output file is JSON withadditional info, such as the @version,
+// that we can use, for example, to document the change and ensure that any downstream processes
+// (like querying in Elasticsearch) are aware of it to maintain data consistency.
+
