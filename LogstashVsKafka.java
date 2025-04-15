@@ -15,5 +15,18 @@
 // and provide examples of their usage.
 
 
+// 2. Requirements
+
+// Before learning the difference between Logstash and Kafka, let's ensure we have a few
+// prerequisites installed and basic knowledge of the technologies involved.
+// First, we need to install Java 8 or later. // https://docs.oracle.com/en/java/javase/17/install/overview-jdk-installation.html
+
+// Logstash is part of the ELK stack (Elasticsearch, Logstash, Kibana) // https://www.elastic.co/guide/en/elastic-stack/current/installing-elastic-stack.html
+// but can be installed and used independently.
+// For Logstash, we can visit the official Logstash download page // https://www.elastic.co/downloads/logstash
+// and download the appropriate package for our operatiing system (Linux, macOS, or Windows).
+
+// We also need to install Kafka // https://www.baeldung.com/apache-kafka
+// and have confidence in our understandng of the publisher-subscriber model. // https://www.baeldung.com/cs/publisher-subscriber-model
 
 
