@@ -95,5 +95,13 @@ output {
     }
 }'
 
+// Let's explain the different paths of the configuration:
+// * The whole chain of commands (input/filter/output) is a pipeline.
+// * Extract timestamp, log level, and message fields from the logs with the grok filter.
+// * Remove unnecessary info with a *mutate* filter.
+// * Apply JSON format with Codec in the *output* filter.
+// * After the input example.log file in processed,
+// the output will be encoded in JSON format in the processed-log.json file. 
+
 
 
