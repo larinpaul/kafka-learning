@@ -45,7 +45,20 @@
 // Inputs define where the raw data comes from.
 // 2. Filters: These components process and transform the data. 
 // Common filters include Grok for pasring unstructured data, // https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html
-// 
+// mutate for modifying fields, and date for timestamp formatting.
+// Filters allow for deep customization and data preparation before sending it to its final destination.
+// 3. Outputs: After processing, outputs send the data to destinations 
+// such as Elasticsearch, databases, message queues, or local files.
+// Logstash supports multiple parallel outputs,
+// making it ideal for distributing data to various endpoints.
+// 4. Codecs: Codes encode and decode data streams, // https://www.elastic.co/guide/en/logstash/current/codec-plugins.html
+// such as converting JSON to structured object or reading plain text.
+// They act as mini-plugins that process the data as it's being ingested or sent out.
+// 5. Pipelines: A pipeline is a defined data flow through inputs, filters, and outputs.
+// Pipelines can create complext workflows, enabling data processing in multiple stages. 
+
+// These components work together to make Logstash as powerful tool
+// for centralizing logs, transforming data, and integrating with various external systems.
 
 
 
