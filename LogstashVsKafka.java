@@ -177,7 +177,14 @@ $ /bin/kafka-console-producer.sj \
     --bootstrap-server localhost:9092 \
     <<< "Hello, World!"
 
+// Now, we canconsumer our messages:
+$ /bin/kafka-console-consumer.sh \
+    --topic hello-world \
+    --from-beginning \
+    --bootstrap-server localhost:9092
 
+// We'll get messages from the Kafka log storage for that specific topic by consuming them:
+// Hello, World!
 
 
 
