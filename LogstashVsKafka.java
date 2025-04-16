@@ -168,6 +168,15 @@ $ /bin/kafka-topics.sh \
     --partitions 1 \
     --replication-factor 1
 
+// We'll get the message of the topic creation:
+$ Created topic hello-world.
+
+// Let's now try to send a message to the topic:
+$ /bin/kafka-console-producer.sj \
+    --topic hello-world \
+    --bootstrap-server localhost:9092 \
+    <<< "Hello, World!"
+
 
 
 
