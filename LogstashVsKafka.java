@@ -122,3 +122,8 @@ output {
 // that we can use, for example, to document the change and ensure that any downstream processes
 // (like querying in Elasticsearch) are aware of it to maintain data consistency.
 
+
+// Apache Kafka is an open-source distributed event streaming platform for building 
+// real-time data pipelines and applications.
+
+
