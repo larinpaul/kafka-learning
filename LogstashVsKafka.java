@@ -154,6 +154,21 @@ output {
 // distributed messaging platform that can handle massive volumes of streaming data.
 
 
+// 4.2. Kafka Example
+
+// Let's create a topic, publish a simple "Hello, World" message, and consumer it.
+
+// First, let's create a topic. It can belong to multiple partitons
+// and typically represents one subject of our domain:
+
+$ /bin/kafka-topics.sh \
+    --create \
+    --topic hello-world \
+    --bootstrap-server localhost:9092 \
+    --partitions 1 \
+    --replication-factor 1
+
+
 
 
 
