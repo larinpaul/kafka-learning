@@ -125,5 +125,35 @@ output {
 
 // Apache Kafka is an open-source distributed event streaming platform for building 
 // real-time data pipelines and applications.
+// Let's look at it's main components:
+// 1. Topics and Partitions: Kafka organizes messages into categories called topics. // https://www.baeldung.com/kafka-topics-partitions
+// Each topic is divided into partitions, which allow data to be processed on multiple servers
+// in parallel. For example, in an e-commenrce application,
+// you might have separate topics for order data, payment transactions, and user activity logs.
+// 2. Producers and Consumers: Producers publish data (messages) to Kafka topics,
+// while consumers are applications or serviec that read and process these messages.
+// Producers push data to Kafka's distributed brokers, ensuring scalability,
+// while consumers can subscribe to topics and read messages from specific partitions.
+// Kafka guarantees that consumers read each message in order.
+// 3. Brokers: Kafka borkers are servers that store and manage topic partitions.
+// Multiple brokers comprise a Kafka cluster, distributing data and ensuring fault tolerance.
+// If one broker fails, other brokers take over thedata, providing high availability.
+// 4. Kafka Streams and Kafka Connect. // https://www.baeldung.com/java-kafka-streams // https://www.baeldung.com/kafka-connectors-guide
+// Kafka Streams is a powerful stream processing library that allows real-time data processing
+// directly from Kafka topics. This, it enables applications to process and transform data on the fly,
+// such as calculating real-time analytics or detecting patterns in financial transactions.
+// On the other hand, Kafka Connect simplifies the integration of Kafka with external systems.
+// It provides connectors for integrating databases, cloud services, and other applications.
+// 5. ZooKeeper and KRaft: // https://www.baeldung.com/kafka-shift-from-zookeeper-to-kraft
+// Traditionally, Kafka used ZooKeeper for distibuted comfiguration management,
+// including managing broker metadata and leader election for partition replication.
+// With the introduction of KRaft (Kafka Raft), Kafka now supports ZooKeeper-less architectues,
+// but ZooKeeper is still commonly used in many setups.
+
+// Together, these components enable Kafka to deliver a scalable, fault-tolerant,
+// distributed messaging platform that can handle massive volumes of streaming data.
+
+
+
 
 
