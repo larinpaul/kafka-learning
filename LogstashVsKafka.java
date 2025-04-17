@@ -193,6 +193,23 @@ $ /bin/kafka-console-consumer.sh \
 // each fulfulling distinct yet complementary roles.
 
 
+// 5.1. Logstash
+
+// Logstash is an open-source data processing pipeline specializing in ingesting data, tranforming it,
+// and sending the results to various outputs.
+// Its strength lies in its ability to parse and enrich data,
+// making it ideal for processing log and event data.
+
+// For instance, a typical use caes might involve a web application where Logstash
+// ingests logs from multiple servers.
+// Then, it applies filters to extract relevant fields such as timestamps and error messages.
+// Finally, it forwards this enriched data to Elasticsearch for indexing and visualization in Kibana
+// to monitor application performance and diagnose real-time issues.
+
+
+
+
+
 
 
 
