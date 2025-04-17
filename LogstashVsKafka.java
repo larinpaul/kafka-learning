@@ -187,4 +187,15 @@ $ /bin/kafka-console-consumer.sh \
 // Hello, World!
 
 
+// 5. Core Differences Between Logstash and Kafka
+
+// Logstash and Kafka are integral components of modern data processing architectures,
+// each fulfulling distinct yet complementary roles.
+
+
+
+
+
+
+
 
