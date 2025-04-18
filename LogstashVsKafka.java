@@ -219,6 +219,26 @@ $ /bin/kafka-console-consumer.sh \
 // (like recommendation engines, analytics plafrosm, and notification systems)
 // to consume the data in real-time.
 
+// 5.3. Differences
+
+// While Logstash focuses on data transformation, enriching raw logs, and senging them to various destinations,
+// Kafka emphasizes reliable message delivery and stream processing, allowing real-time
+// data flows across diverse systemms.
+
+// Main differences:
+// Primary Purpose
+// Architecture
+// Message Retention
+// Data Ingestion
+// Data Transformation
+// Message Delivery Guarantee
+// Integration Focus
+// Typical Use Cases
+
+// Together, they enable organization to build robust data pipelies
+// that facilitate real-time insigns and decision-making,
+// demonstrating their critical roles in the evolving landscae of data architecture.
+
 
 
 
