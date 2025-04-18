@@ -27,6 +27,15 @@
 // a Kafka topic would be a suitable option to store that data.
 
 
+// 3. What Is a Kafka Partition
+
+// Kafka uses topic partitioning to improve scalability.
+// In partitioning a topic, Kafka breaks it into fractions and stores each of them
+// in different nodes of its distributed system.
+// That number of fractions is determined by us or by the cluster default configurations.
+
+// Kafka guarantees the order of the evenets within thesame topic partition.
+// However, by default, it does not guarantee the order of events across all partitions.
 
 
 
