@@ -37,5 +37,14 @@
 // Kafka guarantees the order of the evenets within thesame topic partition.
 // However, by default, it does not guarantee the order of events across all partitions.
 
+// For example, to imporve performance, we can divide the topic into two different partitions
+// and read from them on the consumer side.
+// In that case, a consumer reads the events in the same order they arrived at the same partiton.
+// In contract, if Kafka delivers two events to different partitions,
+// we can't guarantee that the consumer reads the events in the same order they were produced.
+
+// To improve the ordering of events, we can se an event key to the event object. // https://www.baeldung.com/java-kafka-message-key
+// With that, events with the same key are assigned to the same partition, which is ordered.
+// Thus, events with the same key arrive at the consumer side in the same order they were produced.
 
 
