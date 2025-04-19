@@ -48,3 +48,28 @@
 // Thus, events with the same key arrive at the consumer side in the same order they were produced.
 
 
+// 4. Consumer Groups
+
+// A consumer group is a set of consumers that reads from a topics.
+// Kafka divides all partitions among the consumers in a group,
+// where any given partitionis always consumed once by a group member.
+// However, that division might be unbalanced,
+// which means that more than one partition can be assigned to a consumer.
+
+// For instance, let's picture a topic with three partitions that a consumer group with two consumers should read.
+// Hence, once possible division is that the first consumer gets partitions one and two,
+// and the second consumer only gets partition three.
+
+// In the KIP-500 update, // https://cwiki.apache.org/confluence/display/KAFKA/KIP-500%3A+Replace+ZooKeeper+with+a+Self-Managed+Metadata+Quorum
+// Kafka introduced a new consensus algorithm // https://www.baeldung.com/cs/consensus-algorithms-distributed-systems
+// named KRaft. // https://www.baeldung.com/kafka-shift-from-zookeeper-to-kraft
+// As we add consumers to a group or remove consumers from a group,
+// KRaft rebalances the partitions between the remanining consumers proportionally.
+// Thus, it guarantees that there's no partition without a consumer assigned.
+
+
+
+
+
+
+
