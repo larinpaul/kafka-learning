@@ -95,7 +95,9 @@ public class KafkaTopicConfig {
     }
 }
 
-
+// The KafkaTopicConfig class injects two Spring beans.
+// The KafkaAdmin bean initiates the Kafka cluster with the network address it should run,
+// while the NewTopic bean creates a topic named celcius-scale-topic with one partition.
 
 
 
