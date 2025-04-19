@@ -68,6 +68,33 @@
 // Thus, it guarantees that there's no partition without a consumer assigned.
 
 
+// 5. Configure the Application
+
+// In this section, we'll create the classes to configure a topic, consumer and producer service.
+
+// 5.1. Topic Configuration
+
+// First, let's create the configuration class for our topic:
+
+@Configuration
+public class KafkaTopicConfig {
+
+    @Value(value = "${spring.kafka.bootstrap-servers}")
+    private String bootstrapAddress;
+
+    public KafkaAdmin kafkaAdmin() {
+        Map<String, Object> configs = new HashMap<>();
+        configs.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
+        return new KafkaAdmin(configs);
+    }
+
+    public NewTopic celciusTopic() {
+        return TopicBuilder.name("celcius-scale-topic")
+                .partitions(2)
+                .build();
+    }
+}
+
 
 
 
