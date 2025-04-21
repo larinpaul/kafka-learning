@@ -100,5 +100,32 @@ public class KafkaTopicConfig {
 // while the NewTopic bean creates a topic named celcius-scale-topic with one partition.
 
 
+// 5.2. Consumer and Producer Configuration
+
+// We need the necessary classes to inject the producer and consumer configurations for our topic.
+// First, let's create the producer configuration class:
+
+public class KafkaProducerConfig {
+
+    @Value(value = "${spring.kafka.bootstrap-servers}")
+    private String bootstrapAddress;
+
+    @Bean
+    public ProducerFactory<String, Double> producerFactory() {
+        Map<String, Object> configProps= new HashMap<>();
+        configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
+        configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, DoubleSerializer.class);
+        return new DefaultKafkaProducerFactory<>(configProps);
+    }
+
+    @Bean
+    public KafkaTemplate<String, Double> kafkaTemplate() {
+        return new KafkaTemplate<>(producerFacotry());
+    }
+}
+
+
+
 
 
