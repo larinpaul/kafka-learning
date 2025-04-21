@@ -125,6 +125,11 @@ public class KafkaProducerConfig {
     }
 }
 
+// The KafkaProducerConfig injects two Spring beans.
+// The ProducerFactory tells how Kafka is supposed to serialize events
+// and whichserver the producer should listen to.
+// The KafkaTemplate will be used in the consumer service class to create events.
+
 
 
 
