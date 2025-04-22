@@ -131,6 +131,13 @@ public class KafkaProducerConfig {
 // The KafkaTemplate will be used in the consumer service class to create events.
 
 
+// 5.3. Kafka Producer Service
+
+// Finally, after the initial configuration, we can create the driver application.
+// Let's first create the producer application:
+
+
+
 
 
 
