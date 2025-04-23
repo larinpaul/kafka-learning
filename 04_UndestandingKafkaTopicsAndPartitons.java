@@ -153,6 +153,14 @@ public class ThermostatService {
     }
 }
 
+// The ThemostatService contains a single method named measureCelsiusAndPublish.
+// This method produces random temperature measurements in the range [25, 35]
+// and publishes to the celcius-scale-topic Kafka topic.
+// To achieve this, we use the doubles() method of the Random class
+// to create a stream of random numbers.
+// Then, we publish the events using the send() method of kafkaTemplate.
+
+
 
 
 
