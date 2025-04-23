@@ -136,6 +136,24 @@ public class KafkaProducerConfig {
 // Finally, after the initial configuration, we can create the driver application.
 // Let's first create the producer application:
 
+public class ThermostatService {
+
+    private final KafkaTemplate<String, Double> kafkaTemplate;
+
+    public ThermostatService(KafkaTemplate<String, Double> kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
+    }
+
+    public void measureCelciusAndPublish(int numMeasurements) {
+        new Random().doubles(25, 35)
+                .limit(numMeasurements)
+                .forEach(Emp => {
+                    kafkaTemplate.send("celcius-scale-topic", tmp);
+                });
+    }
+}
+
+
 
 
 
