@@ -161,6 +161,11 @@ public class ThermostatService {
 // Then, we publish the events using the send() method of kafkaTemplate.
 
 
+// 6. Producing and Consuming Events
+
+// In this section, we'll see how to configure a Kafka consumer to read events from the topic
+// using an embedded Kafka broker.
+
 
 
 
