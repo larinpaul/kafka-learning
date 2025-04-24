@@ -167,7 +167,28 @@ public class ThermostatService {
 // using an embedded Kafka broker.
 
 
+// 6.1. Create the Consumer Service
 
+// To consume events, we need one or more consumer classes.
+// Let's create one consumer of the celcius-scale-topic.
+
+@Service
+public class TemperatureConsumer {
+    Map<String, Set<String>> consumerRecords = new ConcurrentHashMap<>();
+
+    @KafkaListener(topics = "celcius-scale-topic", groupId = "group-1")
+    public void consumer1(ConsumerRecord<?, ?> consumerRecords) {
+        trackConsumerPartitions("consumer-1", consumerRecord.partition());
+    }
+
+    private void trackConsumedPartitions(String consumerName, int partitionNumber) {
+        consumedRecords.computeIfAbsent(consumerName, k -> new HashSet<>());
+        consumedRecords.computeIfPresent(consumerName, (k, v) -> {
+            v.add(String.valueOf(partitionNumber));
+            return v;
+        });
+    }
+}
 
 
 
