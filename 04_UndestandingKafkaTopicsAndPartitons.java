@@ -190,6 +190,14 @@ public class TemperatureConsumer {
     }
 }
 
+// Our consumer1() method uses the @KafkaListener annotation to initiate the consumer.
+// The topics argument is a list of topics to consume,
+// while the groupId argument identifies the consumer group to which the consumer belongs.
+
+// To visualize the results later, we've used a ConsurrentHashMap to store the events consumed. // https://www.baeldung.com/concurrenthashmap-reading-and-writing
+// The key correspons to the consumer's name,
+// whereas the value contains the partitions that it consumed from.
+
 
 
 
