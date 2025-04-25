@@ -231,7 +231,11 @@ public class KafkaTopicsAndPartitionsIntegrationTest {
 
 // Finally, in the test method, we call our thermostat service to produce 10,000 events.
 
+// We'll use Thread.sleep() to wait 1 second after the events are produced.
+// This ensures the consumers are properly set up in the broker to start processing messages.
+// Let's see an example of the output we'll get when we run the test:
+{consumer-1=[0, 1]}
 
-
-
-
+// That means the same consumer processed all events in partitions 0 and 1
+// since we have only one consumer and oneconsumer group.
+// This result may vary if there are more consumers in different consumer groups.
