@@ -199,5 +199,30 @@ public class TemperatureConsumer {
 // whereas the value contains the partitions that it consumed from.
 
 
+// 6.2. Create the Test Class
+
+// Now, let's create our integration test class:
+
+@SpringBootTest(classes = ThermostatApplicationKafkaApp.class)
+@EmbeddedKafka(partitions = 2, brokerProperties = {"listeners=PLAINTEXT://localhost:9092", "port=9092"})
+public class KafkaTopicsAndPartitionsIntegrationTest {
+    @ClassRule
+    public static EmbdeddedKafkaBroker embeddedKafka = new EmbeddedKafkaBroker(1, true, "multitype");
+
+    @Autowired
+    private ThersomstatService service;
+
+    @Autowired
+    private TemperatureConsumer consumer;
+
+    @Test
+    public void givenTopic_andConsumerGroup_whenConsumerListenToEvents_thenConsumeItCorrectly() throws Exception {
+        service.measureCelciusAndPublish(10000);
+        Thread.sleep(1000);
+        System.out.println(consumer.consumerRecords);
+    }
+
+}
+
 
 
