@@ -221,8 +221,17 @@ public class KafkaTopicsAndPartitionsIntegrationTest {
         Thread.sleep(1000);
         System.out.println(consumer.consumerRecords);
     }
-
 }
+
+// We're using an embedded Kafka broker to run the test with Kafka. // https://www.baeldung.com/spring-boot-kafka-testing
+// The @EmbeddedKafka annotation uses the argument brokerProperties to configure the URL
+// and port the broker will run on.
+// Then, we start the embedded broker using a JUnit rule // https://www.baeldung.com/junit-4-rules
+// in the EmbeddedKafkaBroker field.
+
+// Finally, in the test method, we call our thermostat service to produce 10,000 events.
+
+
 
 
 
