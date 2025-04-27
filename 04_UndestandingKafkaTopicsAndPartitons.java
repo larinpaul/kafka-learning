@@ -239,3 +239,11 @@ public class KafkaTopicsAndPartitionsIntegrationTest {
 // That means the same consumer processed all events in partitions 0 and 1
 // since we have only one consumer and oneconsumer group.
 // This result may vary if there are more consumers in different consumer groups.
+
+
+// 7. Conclusion
+
+// In this article, we've looked at the definitions of Kafka topics and partitions
+// and how they relate to each other.
+// We've also illustrated a scenario of a consumer reading events
+// from both partitions of a topic using an embedded Kafka broker.
