@@ -22,6 +22,27 @@ public class 05_IsAKeyRequiredAsPartOfSendingMessagesToKafka {
     // We'll then learn how we can publish messages with a key to a Kafka topic.
 
     
+    // 2. Significance of a Key in a Kafka Message
+
+    // As we know, Kafka effectively stores a stream of records in the order in which we generate records.
+
+    // When we publish a message to a Kafka topic, it's distributed among the available partitions
+    // in a round-robin fashion. Hence, within a Kafka topic, the order of messages
+    // is guaranteed within a partition but not across partitions.
+
+    // When we publish messages with a key to a Kafka topic, all messages with the same key 
+    // are guaranteed to be stored in the same partition by Kafka.
+    // Thus keys in Kafka messages are useful if we want to maintain order for messages having the same key.
+
+    // To summarize, keys aren't mandatory as part of sending messages to Kafka.
+    // Basically, if we wish to maintain a strict order of messages with the same key,
+    // then we should definitely be using keys with messages.
+    // For all other cases, having null keys will provide a better distribution of messages amongst the partitions.
+
+    // Next, let's straightaway deep dive int osome of the implementation code
+    // having Kafka messages with a key.
+
+    
 
 
 
