@@ -42,7 +42,14 @@ public class 05_IsAKeyRequiredAsPartOfSendingMessagesToKafka {
     // Next, let's straightaway deep dive int osome of the implementation code
     // having Kafka messages with a key.
 
+
+    // 3. Setup
     
+    // Before we begin, let's first initialize a Kafka cluster, set up the dependencies,
+    // and initialize a connection with the Kafka cluster.
+
+    // Kafka's Java library provides easy-to-use Producer and Consumer API
+    // that we can use to publish and consume message from Kafka.
 
 
 
