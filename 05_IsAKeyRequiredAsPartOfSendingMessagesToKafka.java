@@ -62,6 +62,30 @@ public class 05_IsAKeyRequiredAsPartOfSendingMessagesToKafka {
         <version>3.4.0</version>
     </dependency>
 
-    
+
+    // 3.2. Cluster and Topic Initialization
+
+    // Secondly, we'll need a running Kafka cluster to which we can connect
+    // and perform various Kafka operations.
+    // The guide assumes that a Kafka cluster is running on our local system 
+    // with the default configurations.
+
+    // Lastly, we'll create a Kafka topic with multiple partitions 
+    // that we can use to publish and consume messages.
+    // Referring to our Kafka Topic Creation guide, let's create a topic named "baeldung":
+
+    Properties adminProperties = new Properties();
+    adminProperties.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+
+    Admin admin = Admin.create(adminProperties);
+
+    // Here, we created an instance of Kafka's Admin with the basic configurations
+    // defined by the Properties instance. // https://www.baeldung.com/java-properties
+    // Next, we'll use this Admin instance to create a topic named "baeldung" with five partitions:
+
+    admin.createTopics(Collections.singleton(new NewTopic("baeldung", 5, (short), 1)));
+
+    // Now that we have the Kafka cluster setup initialized with a topic,
+    // let's publish some messages with a key.
 
 }
