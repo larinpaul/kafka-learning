@@ -52,6 +52,16 @@ public class 05_IsAKeyRequiredAsPartOfSendingMessagesToKafka {
     // that we can use to publish and consume message from Kafka.
 
 
+    // 3.1. Dependencies
 
+    // Firstly, let's add the Maven dependency for Kafka Clients Java library // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+    // to our project's pom.xml file:
+    <dependency>
+        <groupId>org.apache.kafka</groupId>
+        <artifactId>kafka-clients</artifactId>
+        <version>3.4.0</version>
+    </dependency>
+
+    
 
 }
