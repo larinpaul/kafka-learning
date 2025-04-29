@@ -129,5 +129,13 @@ public class 05_IsAKeyRequiredAsPartOfSendingMessagesToKafka {
     // Now let's publish a few messages to the Kafka topic and verify the partitions.
 
 
+    for (int i = 1; i <= 10; i++) {
+        ProducerRecord<String, String> records = new ProducerRecord<>("baeldung", "message-key", String.valueOf(i));
+        Future<RecordMetadata> future = producer.send(record);
+        RecordMetadata metadata = future.get();
+
+        logger.info(String.valueOf(metadata.partition()));
+    }
+
 
 }
