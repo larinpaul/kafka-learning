@@ -99,6 +99,22 @@ public class 05_IsAKeyRequiredAsPartOfSendingMessagesToKafka {
     // Let's deep dive into each of these steps in detail.
 
 
+    // 4.1. Initialize Producer
+
+    // First, let's create a new Properties instance that holds the producer's properties
+    // to connect to our local broker:
+
+    Properties producerProperties = new Properties();
+    producerProperties.put(ProducerConfig.BOOTSTRP_SERVERS_CONFIG, "localhost:9092");
+    producerProperties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+    producerProperties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+
+    // Further, let's create an instance of KafkaProducer using the created producer's Properties instance:
+
+    KafkaProducer <String, String> producer = new KafkaProducer<>(producerProperties);
+
+    // The KafkaProducer class's constructor accepts a Properties object (or a Map)
+    // and returns an instance of KafkaProducer.
 
 
 }
