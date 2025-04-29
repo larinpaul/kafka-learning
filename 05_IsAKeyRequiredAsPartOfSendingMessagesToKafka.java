@@ -137,5 +137,30 @@ public class 05_IsAKeyRequiredAsPartOfSendingMessagesToKafka {
         logger.info(String.valueOf(metadata.partition()));
     }
 
+    // We used the KafkaProducer.send(ProducerRecord<String, String> records) method
+    // to publish a message to Kafka.
+    // The method returns an instance of Future // https://www.baeldung.com/java-future
+    // of the type RecordMetadata.
+    // We then use the blocking call to Future<RecordMetadata>.get() method
+    // that returns an instance of RecordMetadata when the message is published.
+    
+    // Next, we use the RecordMetadata.partition() method and fetch the partition of the messages.
+
+    // The above code snippet produces the following logged result:
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+
+    // Using this, we verified that the messages we published with the same key
+    // are published to the same partition.
+
+
 
 }
