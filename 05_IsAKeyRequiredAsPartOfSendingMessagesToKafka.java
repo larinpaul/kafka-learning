@@ -117,4 +117,17 @@ public class 05_IsAKeyRequiredAsPartOfSendingMessagesToKafka {
     // and returns an instance of KafkaProducer.
 
 
+    // 4.2. Publish Messages
+
+    // The Kafka Publisher API provides multiple constructors to create an instance of ProducerRecord with a key.
+    // We use the ProducerRecord<K,V>(String topic, K key, V value) constructor to create a message with a key:
+
+    ProducerRecords<String, String< records = new ProducerRecord<>("baeldung", "message-key", "Hello World");
+
+    // Here, we created an instance of ProducerRecord for the "baeldung" topic with a key.
+
+    // Now let's publish a few messages to the Kafka topic and verify the partitions.
+
+
+
 }
