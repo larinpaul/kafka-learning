@@ -162,5 +162,12 @@ public class 05_IsAKeyRequiredAsPartOfSendingMessagesToKafka {
     // are published to the same partition.
 
 
+    // 5. Conclusion
+
+    // In this article, we learned the significance of a key in a Kafka message.
+
+    // We first saw how we can publish a message with a key to a topic.
+    // We then discussed how we can verify that messages with the same key
+    // are published to the same partition.
 
 }
