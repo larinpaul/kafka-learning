@@ -88,4 +88,17 @@ public class 05_IsAKeyRequiredAsPartOfSendingMessagesToKafka {
     // Now that we have the Kafka cluster setup initialized with a topic,
     // let's publish some messages with a key.
 
+
+    // 4. Publishing Messages With a Key
+
+    // To demonstrate our coding examples, we'll first create an instance of KafkaProducer
+    // with some basic producer properties defined by the Properties instance.
+    // Next, we'll use the created KafkaProducer instance to publish messages
+    // with a key and verify the topic partition.
+
+    // Let's deep dive into each of these steps in detail.
+
+
+
+
 }
