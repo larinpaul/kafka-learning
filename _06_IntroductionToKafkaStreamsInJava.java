@@ -61,6 +61,18 @@ public class _06_IntroductionToKafkaStreamsInJava {
 
     ./confluent start
 
+    // Once Kafka starts, we can define our data source and name our application
+    // using APPLICATION_ID_CONDIF:
+
+    String inputTopic = "inputTopic";
+
+    Properties streamsConfiguration = new Properties();
+    streamsConfiguration.put(
+        StreamsConfig.APPLICATION_ID_CONFIG,
+        "wordcount-live-test"
+    );
+
+    
 
 
 }
