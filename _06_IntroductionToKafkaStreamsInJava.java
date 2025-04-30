@@ -25,8 +25,23 @@ public class _06_IntroductionToKafkaStreamsInJava {
     // Important to note is that the KafkaStreams library isn't reactive
     // and has no support for async operations and backpressure handling.
 
-    
 
+    // 2. Maven Dependency
+
+    // To start writing Stream processing logic using KafkaStreams, 
+    // we need to add a dependency to kafka-streams // https://mvnrepository.com/artifact/org.apache.kafka/kafka-streams
+    //and kafka-clients: // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+
+    <dependency>
+        <groupId>org.apache.kafka</groupId>
+        <artiactId>kafka-streams</artifactId>
+        <version>3.4.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.kafka</groupId>
+        <artifactId>kafka-clients</artifactId>
+        <version>3.4.0</version.
+    </dependency>
 
 
 }
