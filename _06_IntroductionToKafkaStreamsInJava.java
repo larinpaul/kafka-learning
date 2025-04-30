@@ -92,6 +92,15 @@ public class _06_IntroductionToKafkaStreamsInJava {
         StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG,
         Serdes.String().getClass().getName());
 
-        
+    // Stream processing is often stateful.
+    // When we want to save intermediate results, 
+    // we need to specify the STATE_DIR_CONFIG parameter.
+
+    // In our test, we're using a local file system:
+    
+    this.stateDirectory = Files.createTempDirectory("kafka-streams");
+    streamsConfiguration.put(
+        StreamsConfig.STATE_DIR_CONFIG, this.stateDirectory.toAbsolutePath().toString());
+
 
 }
