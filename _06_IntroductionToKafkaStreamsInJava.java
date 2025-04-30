@@ -72,7 +72,15 @@ public class _06_IntroductionToKafkaStreamsInJava {
         "wordcount-live-test"
     );
 
+    // A crucial configuration parameter is the BOOTSTRAP_SERVER_CONFIG.
+    // This is the URL to our local Kafka instance that we just started:
     
+    private String bootstrapServers = "localhost:9092";
+    streamsConfiguration.put(
+        StreamsConfig.BOOTSTRAP_SERVERS_CONFIG,
+        bootstrapServers
+    );
+
 
 
 }
