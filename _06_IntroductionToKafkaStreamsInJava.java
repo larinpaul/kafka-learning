@@ -81,6 +81,17 @@ public class _06_IntroductionToKafkaStreamsInJava {
         bootstrapServers
     );
 
+    // Next, we need to pass the type of the key and value of messages
+    // that will be consumed from inputTopic:
+    
+    streamsConfiguration.put(
+        StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG,
+        Serdes.String().getClass().getName()
+    );
+    streamsConfiguration.put(
+        StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG,
+        Serdes.String().getClass().getName());
 
+        
 
 }
