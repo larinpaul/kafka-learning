@@ -43,5 +43,12 @@ public class _06_IntroductionToKafkaStreamsInJava {
         <version>3.4.0</version.
     </dependency>
 
+    // We also need to have Apache Kafka installed and started 
+    // because we'll be using a Kafka topic.
+    // This topic will be the data source for our streaming job.
+
+    // We can download Kafka and other required dependencies from the official websote. // https://www.confluent.io/download/
+    
+
 
 }
