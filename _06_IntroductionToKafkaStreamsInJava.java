@@ -48,7 +48,19 @@ public class _06_IntroductionToKafkaStreamsInJava {
     // This topic will be the data source for our streaming job.
 
     // We can download Kafka and other required dependencies from the official websote. // https://www.confluent.io/download/
-    
+
+
+    // 3.Configuring KafkaStreams Input
+
+    // The first thing we'll do is the definitionof the input Kafka topic.
+
+    // We can use the Confluent tool that we donwloaded - it contains a Kafka Server.
+    // It also contains the kafka-console-producer that we can use to publish messages to Kafka
+
+    // To get started let's run our Kafka cluster:
+
+    ./confluent start
+
 
 
 }
