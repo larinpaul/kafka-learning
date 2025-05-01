@@ -134,5 +134,26 @@ public class _06_IntroductionToKafkaStreamsInJava {
     // and calling the count() that will calculate occurrences of a specific word.
 
 
+    // 6. Starting KafkaStream Job
+
+    // Up to this point, we built a topology that can be executed.
+    // However, the job hasn't started yet.
+
+    // We need to start our job explicitly by calling the start() method on the KafkaStreams instance:
+
+    Topology topology = builder.build();
+    KafkaStreams streams = new KafkaStreams(topology, streamsConfiguration);
+    streams.start();
+
+    Thread.sleep(30000);
+    streams.close();
+
+    // Note that we are waiting 30 seconds for the job to finish.
+    // In a real-world scenario, that job would be running all the time,
+    // processing events from Kafka as they arrive.
+
+
+
+
 
 }
