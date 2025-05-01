@@ -103,4 +103,25 @@ public class _06_IntroductionToKafkaStreamsInJava {
         StreamsConfig.STATE_DIR_CONFIG, this.stateDirectory.toAbsolutePath().toString());
 
 
+    // 4. Building a Streaming Topology
+
+    // Once we defined our input topic, we can create a Streaming Topology -
+    // that is a definitionof how events should be handled and transformed.
+
+    // In our example, we'd like to implement a word counter.
+    // For every sentence sent to inputTopic, 
+    // we want to split it into words and calculate the occurrence of every word.
+
+    // We can use an instance of the KStreamsBuilder class to start constructing our topology:
+
+    StreamsBuilder builder = new StreamsBuilder();
+    KStream<String, String> textLines = builder.stream(inputTopic);
+    Pattern pattern = Pattern.compile("\\W+", Pattern.UNICODE_CHARACTER_CLASS);
+
+    KTable<String, Long> wordCounts = textLines
+        .flatMapValues(value -> Arrays.asList(pattern.split(value.toLowerCase())))
+    .groupBy((key, word) -> word)
+    .count();
+
+
 }
