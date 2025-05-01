@@ -160,8 +160,25 @@ public class _06_IntroductionToKafkaStreamsInJava {
     >"this is a pony"
     >"this is a horse and pony"
 
+    // This way, we published two events to Kafka.
+    // Our application will consume those events and will print the following output:
 
+    word: -> 1
+    word: this -> 1
+    word: is -> 1
+    word: a -> 1
+    word: pony -> 1
+    word: -> 2
+    word: this -> 2
+    word: is -> 2
+    word: a -> 2
+    word: horse -> 1
+    word: and -> 1
+    word: pony -> 2
 
-
+    // We can see that when the first message arrived,
+    // the word pony occurred only one.
+    // But when we sent the second message,
+    // the word pony happened for the second time printing: "word: pony -> 2".
 
 }
