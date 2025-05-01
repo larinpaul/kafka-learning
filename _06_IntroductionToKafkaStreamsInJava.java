@@ -152,6 +152,14 @@ public class _06_IntroductionToKafkaStreamsInJava {
     // In a real-world scenario, that job would be running all the time,
     // processing events from Kafka as they arrive.
 
+    // We can test our job by publishing some events to our Kafka topic.
+
+    // Let's start a kafka-console-producer and manually send some events to our inputTopic:
+
+    ./kafka-console-producer --topic inputTopic --broker-list localhost:9092
+    >"this is a pony"
+    >"this is a horse and pony"
+
 
 
 
