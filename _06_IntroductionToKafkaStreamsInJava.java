@@ -123,5 +123,16 @@ public class _06_IntroductionToKafkaStreamsInJava {
     .groupBy((key, word) -> word)
     .count();
 
+    // To implement word count, firstly, we need to split the values using the regular expression.
+
+    // The split method is returning an array.
+    // We're using the flatMapValues() to flatten it.
+    // Otherwise, we'd end up with a list of arrays,
+    // and it'd be inconvenient to write code using such structure.
+
+    // Finally, we're aggregating the values for every word
+    // and calling the count() that will calculate occurrences of a specific word.
+
+
 
 }
