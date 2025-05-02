@@ -181,4 +181,11 @@ public class _06_IntroductionToKafkaStreamsInJava {
     // But when we sent the second message,
     // the word pony happened for the second time printing: "word: pony -> 2".
 
+
+    // 6. Conclusion
+
+    // This article disculles how to create a primary stream processing application 
+    // using Apache Kafka as a data source and the KafkaStreams libary 
+    // as the stream processing library.
+
 }
