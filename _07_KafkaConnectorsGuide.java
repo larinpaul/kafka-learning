@@ -75,3 +75,13 @@
 // which can be found at Confluent's site. // https://www.confluent.io/download/
 
 
+// 5. Quick Start Kafka Connect
+
+// For starters, we'll discuss the principle of Kafka Connect,
+// using its most basic Connectors, which are
+// the file SOURCE connector and the file SINK connector.
+
+// Conveniently, Confluent Platform comes with both of these connectors,
+// as well as reference configurations.
+
+
