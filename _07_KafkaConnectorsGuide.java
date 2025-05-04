@@ -41,4 +41,12 @@
 // like S3, JDBC, and Cassandra, just to name a few.
 
 
+// 3. Features
+
+// Kafka Connect features include:
+
+// * A framework for connecting external systems with Kafka - it simplifies the development,
+// deployment, and management of connectors
+// *
+
 
