@@ -85,3 +85,16 @@
 // as well as reference configurations.
 
 
+// 5.1. Source Connector Configuration
+
+// For the source connector, the reference configuration 
+// is available at $CONFLUENT_HOME/etc/kafka/connect-file-source.properties:
+name=local-file-source
+connector.class=FileStreamSource
+tasks.max=1
+topic=connect-test
+file=test.txt
+
+
+
+
