@@ -47,6 +47,18 @@
 
 // * A framework for connecting external systems with Kafka - it simplifies the development,
 // deployment, and management of connectors
-// *
+// * Distributed and standalone modes - it helps us to deploy large clusters
+// by leveraging the distributed nature of Kafka,
+// as well as setup for development, testing, and small production deployments
+// * REST interface - we can manage connectors using a REST API
+// * Automatic offset management - Kafka Connect helps us to handle the offset commit process,
+// which saves us the trouble of implementing this error-prone part of connector development manually
+// * Distributed and scalable by deffault - Kafka Connect uses the existing group management protocol;
+// we can add more workers to scale up a Kafka Connect cluster
+// * Streaming and batch integration - Kafka Connect is an ideal solution 
+// for bridging streaming and batch data systems in connection 
+// with Kafka's existing capabilities
+// * Transformations - these enable us to make simple and lightweight
+// modifications to individual messages
 
 
