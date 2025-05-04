@@ -62,3 +62,16 @@
 // modifications to individual messages
 
 
+// 4. Setup
+
+// Instead of using the plain Kafka distribution,
+// we'll download Confluent Platform, a Kafka distribution prvided by Confluent, Inc.,
+// the company behind Kafka.
+// Concluent Platfrom comes with some additional tools and clients,
+// compared to plain Kafka,
+// as well as some additional pre-built Connectors.
+
+// For our case, the Open Source edition is sufficient,
+// which can be found at Confluent's site. // https://www.confluent.io/download/
+
+
