@@ -95,6 +95,19 @@ tasks.max=1
 topic=connect-test
 file=test.txt
 
+// This configuration has some properties that are common for all source connectors:
+// * name is a user-specified name for the connector instance
+// * connector.class specifies the implementing class, basically the kind of connector
+// * task.max specifies how many instances of our source connector should run in parallel, and
+// * topic defines the topic to which the connector should send the output.
 
+// In this case, we also have a connector-specific attribute:
+// * file defines the file from which the connector should read the input
+
+// For this to work then, let's create a basic file with some context:
+
+echo -e "foo\nbar\n" > $CONFLUENT_HOME/test.txt
+
+// Note that the working directory is $CONFLUENT_HOME.
 
 
