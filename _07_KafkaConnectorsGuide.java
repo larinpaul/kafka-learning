@@ -111,3 +111,17 @@ echo -e "foo\nbar\n" > $CONFLUENT_HOME/test.txt
 // Note that the working directory is $CONFLUENT_HOME.
 
 
+// 5.2. Sink Connector Configuration
+
+// For our sink connector, we'll use the reference configuration
+// as $CONFLUENT_HOME/etc/kafka/connect-file-sink.properties:
+name=local-file-sink
+connector.class=FileStreamSink
+tasks.max=1
+file=test.sink.txt
+topics=connect-test
+
+// Logically, it contains exactly the same parameters,
+// though this time connector.class specifies the sink connector implementation,
+// and files is the location where the connector should write the content.
+
