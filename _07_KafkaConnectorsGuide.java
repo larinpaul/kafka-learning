@@ -125,3 +125,13 @@ topics=connect-test
 // though this time connector.class specifies the sink connector implementation,
 // and files is the location where the connector should write the content.
 
+
+// 5.3. Worker Config
+
+// Finally, we have to configure the Connect worker,
+// which will integrate our two connectors 
+// and do the work of reading from the source connector and writing to the sink connector.
+
+// For that, we canuse $CONFLUENT_HOME/etc/kafka/connect-standalone.properties.
+
+
