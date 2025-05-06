@@ -143,6 +143,14 @@ offset.storage.file.filename=/tmp/connect.offsets
 offset.flush.interval.ms=10000
 plugin.path=/share/java
 
+// Note that plugin.path can hold a list of paths, 
+// where connector implementations are available
+
+// As we'll use connectors bundled with Kafka,
+// we can set plugin.path to $CONFLUENT_HOME/share/java.
+// Working with Windows, it might be necessary to provide an absolute path here.
+
+
 
 
 
