@@ -150,6 +150,21 @@ plugin.path=/share/java
 // we can set plugin.path to $CONFLUENT_HOME/share/java.
 // Working with Windows, it might be necessary to provide an absolute path here.
 
+// For the other parameters, we can leave the default values:
+// * bootstrap.servers contains the addresses of the Kafka brokers
+// * key.converter and value.converter define converter classes,
+// which serialize the data as it flows from the source into Kafka
+//and then from Kafka to the sink
+// * key.converter.schemas.enable and value.converter.schemas.enable
+// are converter-specific settings
+// * offset.storage.file.filename is the most important setting
+// when running Connect in standalone mode:
+// it defines where Connect should store its offset data
+// * offset.flush.interval.ms defines the interval at whichthe worker
+// tries to commit offests for tasks
+
+// And the list of parameters is quite mature,
+// so check the official documentation for a complete list. // http://kafka.apache.org/documentation/#connectconfigs
 
 
 
