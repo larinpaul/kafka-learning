@@ -186,4 +186,25 @@ $CONFLUENT_HOME/bin/kafka-console-consumer --bootstrap-server localhost:9092 --t
 {"schema":{"type":"string","optional":false},"payload":"foo"}
 {"schema":{"type":"string","optional":false},"payload":"foo"}
 
+// And, if we have a look at the folder $CONFLUENT_HOME,
+// we can see that a file test.sink.txt was created here:
+
+cat $CONFLUENT_HOME/test.sink.txt
+foo
+bar
+
+// As the sink connector extracts the value from the payload attribute
+// and writes it to the destination file,
+// the data in test.sink.txt has the content of the original test.txt file.
+
+// Now let's add more lines to test.txt.
+
+// When we do, we see that the source connector detects these changes automatically.
+
+// We only have to make sure to insert a newline at the end,
+// otherwise, the source connector won't consider the last line.
+
+// At this point, let's stop the Connect process,
+// as we'll start Connect in distributed mode in a few lines.
+
 
