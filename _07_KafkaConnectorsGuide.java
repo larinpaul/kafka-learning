@@ -167,5 +167,14 @@ plugin.path=/share/java
 // so check the official documentation for a complete list. // http://kafka.apache.org/documentation/#connectconfigs
 
 
+// 5.4. Kafka Connect in Standalone Mode
+
+// And with that, we can start our first connector setup:
+
+$CONFLUENT_HOME/bin/connect-standalone \
+    $CONFLUENT_HOME/etc/kafka/connect-standalone.properties \
+    $CONFLUENT_HOME/etc/kafka/connect-file-source.properties \
+    $CONFLUENT_HOME/etc/kafka/connect-file-sink.properties
+
 
 
