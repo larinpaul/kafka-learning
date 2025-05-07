@@ -176,5 +176,14 @@ $CONFLUENT_HOME/bin/connect-standalone \
     $CONFLUENT_HOME/etc/kafka/connect-file-source.properties \
     $CONFLUENT_HOME/etc/kafka/connect-file-sink.properties
 
+// First of,, we can inspect the content of the topic using the command line:
+
+$CONFLUENT_HOME/bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic connect-test --from-beginning
+
+// As we can see, the source connector took the data from the test.txt file,
+// transformed it into JSON, and sent it to Kafka:
+
+{"schema":{"type":"string","optional":false},"payload":"foo"}
+{"schema":{"type":"string","optional":false},"payload":"foo"}
 
 
