@@ -208,3 +208,40 @@ bar
 // as we'll start Connect in distributed mode in a few lines.
 
 
+// 6. Connect's REST API
+
+// Until now, we made all configurations by passing property files via the command line.
+// However, as Connect is designed to run as a service, 
+// there is also a REST API available.
+
+// By default, it is available at http://localhost:8083. A few endppoints are:
+
+// * GET /connectors - returns a list with all connectors in use
+// * GET /connectors/{name} - returns details about a specific connector
+// * POST /connectors - creates a new connector; the requeset body
+// should be a JSON object containing a string name field
+// and an object config field with the connector configuration parameters
+// * GET /connectors/{name}/status - returns the current status of the connector 
+// - including if it is runninf, failed or paused - which worker
+// it is assigned to, error information if it has failed,
+// and the state of all its tasks.
+// * DELETE /connectors/{name} - deletes a connector,
+// gracefully stopping all tasks and deleting its configuration
+// * GET /connector-plugins - returns a list of connector plugins
+// installed in the Kafka Connect cluster
+
+// The official documentation provides a list with all endpoints. // http://kafka.apache.org/documentation/#connect_rest
+
+// We'll use the REST API for creating new connectors in the following section.
+
+
+
+
+
+
+
+
+
+
+
+
