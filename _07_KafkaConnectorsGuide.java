@@ -235,7 +235,16 @@ bar
 // We'll use the REST API for creating new connectors in the following section.
 
 
+// 7. Kafka Connect in Distributed Mode
 
+// The standalone mode works perfectly for development and testing,
+// as well as smaller setups.
+// However, if we want to make full use of the distributed nature of Kafka,
+// we have to launch Connect in distributed mode.
+
+// By doing soe, connector settings and metadata sre stored in Kafka topics
+// intead of the file system.
+// As a result, the worker nodes are really stateless.
 
 
 
