@@ -247,6 +247,26 @@ bar
 // As a result, the worker nodes are really stateless.
 
 
+// 7.1. Starting Connect
+
+// A reference configuration for distributed mode can be found at 
+// $CONFLUENT_HOME/etc/kafka/connect-distributed.properties.
+
+// Parameters are mostly the same as for standalone mode.
+// There are only a few differences:
+
+// * group.id defines the name of the Connect cluster group.
+// The value must be different from any consumer group ID
+// * offset.storage.topic,  config.storage.topic and status.storage.topic
+// define topics for these settings.
+// For each topic, we can also define a replication factor
+
+// Again, the official documentation provides a list with all parameters. // http://kafka.apache.org/documentation/#connectconfigs
+
+// We can start Connect in distributed mode as follows:
+
+$CONFLUENT_HOME/bin/connect-distributed $CONFLUENT_HOME/etc/kafka/connect-distributed.properties
+
 
 
 
