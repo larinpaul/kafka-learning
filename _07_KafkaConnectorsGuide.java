@@ -268,6 +268,18 @@ bar
 $CONFLUENT_HOME/bin/connect-distributed $CONFLUENT_HOME/etc/kafka/connect-distributed.properties
 
 
+// 7.2. Adding Connectors Using the REST API
+
+// Now, compared to the standalone startup command, we didn't pass any connector configuration
+// as arguments.
+// Instead, we have to create the connectors using the REST API.
+
+// To set up our example from before, we have to send two POST requests
+// to http://localhost:8083/connectors
+// containing the following JSON structs.
+
+// First, we need to create the body for the source connector POST as a JSON file.
+// Here, we'llcall it connect-file-source.json
 
 
 
