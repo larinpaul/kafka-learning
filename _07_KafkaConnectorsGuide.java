@@ -300,6 +300,19 @@ curl -d @"$CONFLUENT_HOME/connect-file-source.json" \
     -H "Content-Type: application\json" \
     -X POST http://localhost:8083/connectors
 
+// Then, we'll do the same for the sink connector,
+// calling the file context-file-sink.json:
+
+{
+    "name": "local-file-sink",
+    "config": {
+        "connector.class": "FileStreamSink",
+        "tasks.max": 1,
+        "file": "test-distributed.sink.txt",
+        "topics": "connect-distributed"
+    }    
+}
+
 
 
 
