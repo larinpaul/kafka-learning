@@ -332,6 +332,11 @@ cat $CONFLUENT_HOME/test-distributed.sink.txt
 foo
 bar
 
+// After we tested the distributed setup,
+// let's clean up by removing the two connectors:
+
+curl -X DELETE http://localhost:8083/connectors/local-file-source
+curl -X DELETE http://localhost:8083/connectors/local-file-sink
 
 
 
