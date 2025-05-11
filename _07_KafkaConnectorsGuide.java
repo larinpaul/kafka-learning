@@ -323,6 +323,6 @@ curl -d @$CONFLUEN_HOME/connect-file-sink.json \
 
 $CONFLUENT_HOME/bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic connect-distributed-from-beginning
 {"schema":{"type":"string","optional":false},"payload":"foo"}
-{""}
+{"schema":{"type":"string","optional":false},"payload":"bar"}
 
 
