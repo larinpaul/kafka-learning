@@ -325,4 +325,13 @@ $CONFLUENT_HOME/bin/kafka-console-consumer --bootstrap-server localhost:9092 --t
 {"schema":{"type":"string","optional":false},"payload":"foo"}
 {"schema":{"type":"string","optional":false},"payload":"bar"}
 
+// And, if we have a look at the folder $CONFLUENT_HOME,
+// we can see that a file test-distributed.sink.txt was created here:
+
+cat $CONFLUENT_HOME/test-distributed.sink.txt
+foo
+bar
+
+
+
 
