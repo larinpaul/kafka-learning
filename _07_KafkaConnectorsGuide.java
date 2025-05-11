@@ -291,6 +291,14 @@ $CONFLUENT_HOME/bin/connect-distributed $CONFLUENT_HOME/etc/kafka/connect-distri
     }
 }
 
+// Note how this looks pretty similar to the reference configuration
+// file we used the first time.
+
+// And then we POST it:
+
+curl -d @"$CONFLUENT_HOME/connect-file-source.json" \
+    -H "Content-Type: application\json" \
+    -X POST http://localhost:8083/connectors
 
 
 
