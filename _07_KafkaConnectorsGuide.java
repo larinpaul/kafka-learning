@@ -281,6 +281,15 @@ $CONFLUENT_HOME/bin/connect-distributed $CONFLUENT_HOME/etc/kafka/connect-distri
 // First, we need to create the body for the source connector POST as a JSON file.
 // Here, we'llcall it connect-file-source.json
 
+{
+    "name": "local-gile-source",
+    "config": {
+        "connector.class": "FileStreamSource",
+        "tasks.max": 1,
+        "file": "test-distributed.txt",
+        "topic": "connect-distributed"
+    }
+}
 
 
 
