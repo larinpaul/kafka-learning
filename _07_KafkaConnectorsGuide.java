@@ -369,6 +369,14 @@ curl -X DELETE http://localhost:8083/connectors/local-file-sink
 // * First, let's wrap the entire message as a JSON struct
 // * After that, let's add afield to that struct
 
+// Before applying our transformations, 
+// we have to configure Connect to use schemaless JSON,
+// by modifying the connect-distributed.properties:
+
+key.converter.schemas.enable=false
+value.converter.schemas.enable=false
+
+
 
 
 
