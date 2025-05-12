@@ -362,6 +362,14 @@ curl -X DELETE http://localhost:8083/connectors/local-file-sink
 // * tranfroms.$alias.$transformationSpecificConfig - Configuration for the respective transformation
 
 
+// 8.2. Applying a Transformer
+
+// To test some transformation features,
+// let's split up the following two tranformations:
+// * First, let's wrap the entire message as a JSON struct
+// * After that, let's add afield to that struct
+
+
 
 
 
