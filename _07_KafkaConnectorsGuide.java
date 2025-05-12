@@ -339,4 +339,13 @@ curl -X DELETE http://localhost:8083/connectors/local-file-source
 curl -X DELETE http://localhost:8083/connectors/local-file-sink
 
 
+// 8. Transforming Data
+
+// 8.1. Supported Transformations
+
+// Transformations enable us to make simple
+// and lightweight modifications to individual messages
+
+
+
 
