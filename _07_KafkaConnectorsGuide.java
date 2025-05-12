@@ -376,6 +376,10 @@ curl -X DELETE http://localhost:8083/connectors/local-file-sink
 key.converter.schemas.enable=false
 value.converter.schemas.enable=false
 
+// After that, we have to restart Connect, again in distributed mode:
+
+$CONFLUENT_HOME/bin/connect-distributed $CONFLUENT_HOME/etc/kafka/connect-distributed.properties
+
 
 
 
