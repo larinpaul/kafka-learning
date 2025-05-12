@@ -380,7 +380,14 @@ value.converter.schemas.enable=false
 
 $CONFLUENT_HOME/bin/connect-distributed $CONFLUENT_HOME/etc/kafka/connect-distributed.properties
 
+// Again, we need to create the body for the source connector POST as a JSON file.
+// Here, we'll call it connect-file-source-transform.json.
 
+// Besides the already known parameters, 
+// we add a few lines for the two required transformations:
+{
+    
+}
 
 
 
