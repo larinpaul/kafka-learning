@@ -346,6 +346,18 @@ curl -X DELETE http://localhost:8083/connectors/local-file-sink
 // Transformations enable us to make simple
 // and lightweight modifications to individual messages
 
+// Kafka Connect supports the following built-in tranformations:
+// * InsertField - Add a field using either static data or record metadata
+// * ReplaceField - Filter or rename fields
+// * MaskField - Replace a field with the valid null value for the type (zero or empty string, for example)
+// * HoistField - Wrap the entire event as a single field inside a struct or a map
+// * ExtractField - Extract a specific field from struct and map and include only this field in the results
+// * SetSchemaMetadata - Modify the schema name or version
+// * TimestampRouter - Modify the topic of a record based on original topic and timestamp
+// * RegexRouter - Modify the topic of a record based on original topic, a replacement string, and a regular expression
+
+
+
 
 
 
