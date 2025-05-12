@@ -356,6 +356,10 @@ curl -X DELETE http://localhost:8083/connectors/local-file-sink
 // * TimestampRouter - Modify the topic of a record based on original topic and timestamp
 // * RegexRouter - Modify the topic of a record based on original topic, a replacement string, and a regular expression
 
+// A transformation is configured using the following parameters:
+// * transform - A comma-separated list of aliases for the transformations
+// * transforms.$alias.type - Class name for the tranformation
+// * tranfroms.$alias.$transformationSpecificConfig - Configuration for the respective transformation
 
 
 
