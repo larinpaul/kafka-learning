@@ -386,7 +386,19 @@ $CONFLUENT_HOME/bin/connect-distributed $CONFLUENT_HOME/etc/kafka/connect-distri
 // Besides the already known parameters, 
 // we add a few lines for the two required transformations:
 {
-    
+    "name": "local-file-source",
+    "config": {
+        "connector.class": "FileStreamSource",
+        "tasks.max": 1,
+        "file": "test-transformaton.txt"
+        "topic": "connect-tranformation",
+        "transforms": "MakeMap,InsertSource",
+        "transforms.MakeMap.type": "org.apache.kafka.connect.transforms.HoistField$Value",
+        "transforms.MakeMap.field": "line",
+        "transforms.InsertSource.type": "org.apache.kafka.connect.transforms.InsertField$Value",
+        "transforms.InsertSource.static.field": "data_source",
+        "transforms.InsertSource.static.value": "test-file-source"
+    }
 }
 
 
