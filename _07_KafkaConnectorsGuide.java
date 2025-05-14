@@ -407,5 +407,8 @@ curl -d @$CONFLUENT_HOME/connect-file-source-transform.json \
     -H "Content-Type: application/json" \
     -X POST http://localhost:8083/connectors
 
+// Let's write some lines to our test-transformation.txt
+Foo
+Bar
 
 
