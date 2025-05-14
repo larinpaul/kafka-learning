@@ -411,4 +411,9 @@ curl -d @$CONFLUENT_HOME/connect-file-source-transform.json \
 Foo
 Bar
 
+// If we now inspect the connect-transformation topic,
+// we should get the following lines:
+{"line":"Foo","data_source":"test-file-source"}
+{"line":"Bar","data_source":"test-file-source"}
+
 
