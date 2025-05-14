@@ -401,6 +401,11 @@ $CONFLUENT_HOME/bin/connect-distributed $CONFLUENT_HOME/etc/kafka/connect-distri
     }
 }
 
+// After that, let's perform the POST:
+
+curl -d @$CONFLUENT_HOME/connect-file-source-transform.json \
+    -H "Content-Type: application/json" \
+    -X POST http://localhost:8083/connectors
 
 
 
