@@ -417,3 +417,12 @@ Bar
 {"line":"Bar","data_source":"test-file-source"}
 
 
+// 9. Using Ready Connectors
+
+// After using these simple connectors,
+// let's have a look at more advanced ready-to-use connectors,
+// and how to install them.
+
+
+
+
