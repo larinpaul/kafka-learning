@@ -424,5 +424,19 @@ Bar
 // and how to install them.
 
 
+// 9.1. Where to Find Connectors
 
+// Pre-built connectors are available from different sources:
+// * A few connectors are bundled with plain Apache Kafka (source and sink for files and console)
+// * Some more connectors are bundled with Confluent Platform (ElasticSearch, HDFS, JDBC, and AWS S3)
+// * Also check out Confluent Hub, // https://www.confluent.io/hub/
+// which is kind of an app store for Kafka connectors.
+// The number of offered connectors is growing continuously:
+// * Confluent connectors (developed, tested, documented and are fully supported by Confluent)
+// * Certified connectors (implemented by a 3rd party and certified by Confluent)
+// * Community-developed and -supported connectors
+// * Beyond that, Confluent also provides a Connectors Page, // https://www.confluent.io/product/connectors/
+// with some connectors which are also vailable at the Confluent Hub,
+// but also with some more community connectors
+// * And finally, there 
 
