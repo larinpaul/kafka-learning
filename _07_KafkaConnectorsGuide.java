@@ -438,5 +438,19 @@ Bar
 // * Beyond that, Confluent also provides a Connectors Page, // https://www.confluent.io/product/connectors/
 // with some connectors which are also vailable at the Confluent Hub,
 // but also with some more community connectors
-// * And finally, there 
+// * And finally, there are also vendors, who provide connectors as part of their product.
+// For example, Landoop provides a streaming library called Lenses, // https://lenses.io/request-demo/
+// which also contains a set of ~25 open source connectors 
+// (many of them are also cross-listed in other places)
+
+// 9.2. Installing Connectors from Confluent Hub
+
+// The enterprise version of Confluent provides a script for installing Connectors
+// and other components from Confluent Hum (the script is not included in the Open Source version).
+// If we're using the enterprise version, we can install a connector
+// using the following command:
+
+$CONFLUENT_HOME/bin/confluent-hub install confluentinc/kafka-connect-mqtt:1.0.0-preview
+
+
 
