@@ -453,4 +453,6 @@ Bar
 $CONFLUENT_HOME/bin/confluent-hub install confluentinc/kafka-connect-mqtt:1.0.0-preview
 
 
+// 9.3. Installing Connectors Manually
+
 
