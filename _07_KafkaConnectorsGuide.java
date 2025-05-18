@@ -455,4 +455,10 @@ $CONFLUENT_HOME/bin/confluent-hub install confluentinc/kafka-connect-mqtt:1.0.0-
 
 // 9.3. Installing Connectors Manually
 
+// If we need a connector, which is not available on Confluent Hub or if we
+// have the Open Sourceversion of Confluent, we can install the required connectors manually.
+// For that, we have to download and unzip the connector,
+// as well as move the included libs to the folder specified as plug
+
+
 
