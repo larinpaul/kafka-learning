@@ -460,5 +460,11 @@ $CONFLUENT_HOME/bin/confluent-hub install confluentinc/kafka-connect-mqtt:1.0.0-
 // For that, we have to download and unzip the connector,
 // as well as move the included libs to the folder specified as plug
 
+// For each connector, the archive should contain two folders that are interesting for us:
+
+// * The lib folder contains the connector.jar, for example,
+// kafka-connect-mqtt-1.0.0-preview.jar,
+// as well as some more jars required by the connector
+// * The etc folder holds one or more reference config files.
 
 
