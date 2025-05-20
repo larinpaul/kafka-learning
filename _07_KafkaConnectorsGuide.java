@@ -467,4 +467,9 @@ $CONFLUENT_HOME/bin/confluent-hub install confluentinc/kafka-connect-mqtt:1.0.0-
 // as well as some more jars required by the connector
 // * The etc folder holds one or more reference config files.
 
+// We have to move the lib folder to $CONFLUENT_HOME/share/java,
+// or whichever path we specified as plugin.path
+// in connect-standalone.properties and connect-distributed.properties.
+// In doing so, it might also make sense to rename the folder to something meaningful.
+
 
