@@ -472,4 +472,7 @@ $CONFLUENT_HOME/bin/confluent-hub install confluentinc/kafka-connect-mqtt:1.0.0-
 // in connect-standalone.properties and connect-distributed.properties.
 // In doing so, it might also make sense to rename the folder to something meaningful.
 
+// We can use the config files from etc either by referencing them
+// while starting in standalone mode,
+// or we can just grab the properties and create a JSON file from them.
 
