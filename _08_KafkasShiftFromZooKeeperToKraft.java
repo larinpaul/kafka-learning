@@ -43,5 +43,14 @@
 // Also, ephemeral znodes can't have children.
 // * The third is sequential, which we can use to create sequential numbers like IDs.
 
+// Through its simple architectgure, ZooKeeper offers a reliable system 
+// with fast processing and scalability.
+// It's intended to be replicated over a set of servers called an ensemble.
+// Each server maintains an in-memory image of the state,
+// along with a transition log and snapshots in a persistent store:
+// https://www.baeldung.com/wp-content/uploads/2022/11/ZooKeeper-Architecture.jpg
+
+
+
 
 
