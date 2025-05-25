@@ -33,10 +33,15 @@
 
 // A name is a sequence of path elements separated by a slash.
 
-// Eveny node in the namespace is identified by a path:
+// Every node in the namespace is identified by a path:
 // https://www.baeldung.com/wp-content/uploads/2022/11/ZooKeeper-Data-Model.jpg
 
-
+// There can be three types of znodes in a ZooKeeper namespace:
+// * The first is persistent, which is the default type and remains in ZooKeeper until deleted.
+// * The second is ephemeral, which gets deleted if the session in which the znode
+// was created disconnects.
+// Also, ephemeral znodes can't have children.
+// * The third is sequential, which we can use to create sequential numbers like IDs.
 
 
 
