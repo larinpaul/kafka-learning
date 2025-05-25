@@ -15,6 +15,10 @@
 // and makes it more powerful to use.
 
 
+// 2. Brief Overview of ZooKeeper
+
+// ZooKeeper // https://zookeeper.apache.org/
+// is a service that enables highly reliable distributed coordination.
 
 
 
