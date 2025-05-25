@@ -57,6 +57,9 @@
 // This involves forwarding all such requests to the leader server,
 // which coordinates them using the ZooKeeper Atomic Broadcast (ZAB) protocol. // https://zookeeper.apache.org/doc/r3.4.13/zookeeperInternals.html#sc_atomicBroadcast
 
-
+// The clients enable applications to read, write, and process
+// streams of events in parallel, at scale, and in a fault-tolerant manner.
+// Producers are the client applications that publish events to Kafka.
+// At the same time, consumers are those that sbuscribe to these events from Kafka.
 
 
