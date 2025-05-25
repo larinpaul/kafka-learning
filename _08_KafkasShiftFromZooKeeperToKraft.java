@@ -50,6 +50,12 @@
 // along with a transition log and snapshots in a persistent store:
 // https://www.baeldung.com/wp-content/uploads/2022/11/ZooKeeper-Architecture.jpg
 
+// ZooKeeper clients connect to exactly one server but can failover to another
+// if the server becomes unavailable.
+// Read requests are serviced from the local replica of each server database.
+// Wrtie requests are processed by an agreement protocol.
+// This involves forwarding all such requests to the leader server,
+// which coordinates them using the ZooKeeper Atomic Broadcast (ZAB) protocol. // https://zookeeper.apache.org/doc/r3.4.13/zookeeperInternals.html#sc_atomicBroadcast
 
 
 
