@@ -26,5 +26,17 @@
 // It's widely used to serve several use cases in large distributed systems.
 
 
+// 2.1. ZooKeeper Architecture
+
+// ZooKeeper stores data in a hierarchical namespace, similar to a standard file system.
+// The namespaceconsists of data registers called znodes. // https://www.baeldung.com/java-zookeeper
+
+// A name is a sequence of path elements separated by a slash.
+
+// Eveny node in the namespace is identified by a path:
+// https://www.baeldung.com/wp-content/uploads/2022/11/ZooKeeper-Data-Model.jpg
+
+
+
 
 
