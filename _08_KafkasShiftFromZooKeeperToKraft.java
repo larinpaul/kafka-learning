@@ -63,3 +63,20 @@
 // At the same time, consumers are those that sbuscribe to these events from Kafka.
 
 
+// 3.2. The Role of ZooKeeper
+// ... a lot of text...
+
+
+// 3.3. Problems with ZooKeeper
+// ... a lot of text ...
+
+
+// 4. Kafka Raft (Kraft) Protocotl
+// ... a lot of text ...
+
+
+// 5. A Simplified and Better Kafka!
+// ... a lot of text ...
+
+
+// 6. Conclusion
