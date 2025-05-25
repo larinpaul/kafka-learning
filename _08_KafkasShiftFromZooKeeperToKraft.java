@@ -19,6 +19,12 @@
 
 // ZooKeeper // https://zookeeper.apache.org/
 // is a service that enables highly reliable distributed coordination.
+// It was originally developer at Yahoo! to streamline processess
+// running on big data clusters.
+// It started as sub-project of Hadoop but later became a standalone 
+// Apache Foundation project in 2008.
+// It's widely used to serve several use cases in large distributed systems.
+
 
 
 
