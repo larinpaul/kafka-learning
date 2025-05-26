@@ -48,7 +48,24 @@ bin/kafka-topics.sh --create --zookeeper localhost:2181 \
 // In case if you have a key as a long value
 // then you should use LongSerializer, the same applies for valu as-well.
 
-
+import java.util.Properties
+import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
+object KafkaProducerApp extends App {
+    val props:Properties = new Properties()
+    props.put("bootstrap.servers","localhost:9092") 
+    props.put("key.serializer",
+            "org.apache.kafka.common.serialization.StringSerializer")
+    props.put("value.serializer",
+            "org.apache.kafka.common.serialization.StringSerializer")
+    props.put("acks","all")
+    val producer = new KafkaProducer[String, String](props)
+    val topic = "text_topic"
+    try {
+        for (i e.printStackTrace())
+    }finally {
+        producer.close()
+    }
+}
 
 // Producer send method returns metadata where we can find;
 // which partition message has written to and offset
