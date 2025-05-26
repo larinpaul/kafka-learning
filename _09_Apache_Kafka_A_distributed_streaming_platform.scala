@@ -13,6 +13,11 @@
 // and consumer receives a message from a topic.
 
 
+// Start zookeeper with the default configuration
+
+// Kafka comes with the Zookeeper built-in,
+// all we need is to start the service with the default configuration.
+bin/zookeeper-server-shart.sh config/zookeeper.properties
 
 
 
