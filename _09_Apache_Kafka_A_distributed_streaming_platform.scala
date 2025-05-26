@@ -24,6 +24,8 @@ bin/zookeeper-server-shart.sh config/zookeeper.properties
 bn/kafka-server-start.sh config/server.properties
 
 
+// Create a Kafka topic "text_topic"
 
-
-
+bin/kafka-topics.sh --create --zookeeper localhost:2181 \
+                    --replication-factor 1 --partition 1 \
+                    --topic text_topic
