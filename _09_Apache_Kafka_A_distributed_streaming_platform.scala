@@ -29,3 +29,13 @@ bn/kafka-server-start.sh config/server.properties
 bin/kafka-topics.sh --create --zookeeper localhost:2181 \
                     --replication-factor 1 --partition 1 \
                     --topic text_topic
+
+
+// Kafka Maven Dependency
+
+<dependency>
+    <groupId>org.apache.kafka.</groupId>
+    <artifactId>kafka-clients</artifactId>
+    <version>2.1.0</version>
+</dependency>
+
