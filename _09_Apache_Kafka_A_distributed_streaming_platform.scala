@@ -39,3 +39,23 @@ bin/kafka-topics.sh --create --zookeeper localhost:2181 \
     <version>2.1.0</version>
 </dependency>
 
+
+// Kafka Producer Scala example
+
+// This Kafka Producer scala example publishes messages to a topic as a Record.
+// Record is a key-value pair where the key is optional and value is mandatory.
+// In this example we ave key and value as string hece, we are using StringSerializer.
+// In case if you have a key as a long value
+// then you should use LongSerializer, the same applies for valu as-well.
+
+
+
+// Producer send method returns metadata where we can find;
+// which partition message has written to and offset
+
+
+
+
+
+
+
