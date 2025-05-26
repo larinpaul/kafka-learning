@@ -20,7 +20,8 @@
 bin/zookeeper-server-shart.sh config/zookeeper.properties
 
 
-
+// Star Kafka broker with the default configuration
+bn/kafka-server-start.sh config/server.properties
 
 
 
