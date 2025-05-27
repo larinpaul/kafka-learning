@@ -81,7 +81,31 @@ object KafkaProducerApp extends App {
 // Here we are using StringDeserialize for both key and value.
 
 import java.util.{Collections, Properties}
-import java.util.
+import java.util.regex.Pattern
+import org.apache.kafka.clients.consumer.KafkaConsumer
+import scala.collection.JavaConverters._
+object KafkaConsumerSubscribeApp extends App {
+    val props:Properties = new Properties()
+    props.put("group.id", "test")
+    props.put("bootstrap.servers","localhost:9092")
+    props.put("key.deserialiazer",
+            "org.apache.kafka.common.serialization.StringDeserializeer")
+    props.put("value.deserializer",
+            "org.apache.kafka.common.serialization.StringDeserialiazer")
+    props.put("enable.auto.commit", "true")
+    props.put("auto.commit.interval.ms", "1000")
+    val consumer = new KafkaConsumer(props)
+    val topics = List("topic_text")
+    try {
+        consumer.subscribe(topics.asJava)
+        while (true) {
+            val records = consumer.poll(10)
+            for (record e.print.StackTrace())
+        } finally {
+            consumer.close()
+        }
+    }       
+}
 
 
 
