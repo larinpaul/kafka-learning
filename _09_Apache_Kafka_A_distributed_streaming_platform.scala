@@ -71,7 +71,17 @@ object KafkaProducerApp extends App {
 // which partition message has written to and offset
 
 
+// Kafka Consumer scala example
 
+// This Kafka Consumer scala example subscribes to a topic
+// and receives a message (records) that arrives into a topic.
+// This message contains key, value, partition, and off-set.
+// All messages in Kafka are serialized hence,
+// a consumer should use deserializer to convert to the appropriate data type.
+// Here we are using StringDeserialize for both key and value.
+
+import java.util.{Collections, Properties}
+import java.util.
 
 
 
