@@ -108,5 +108,18 @@ object KafkaConsumerSubscribeApp extends App {
 }
 
 
+// How to Run Kafka Producer and Consumer?
 
+// 1. Run KafkaConsumerSubscribeApp.scala program
 
+// When you runthis program, it waits for messages to arrive in "text_topic" topic.
+
+// 2. Run KafkaProducerApp.scala program
+
+// Run KafkaProducerApp.scala program whiich produces messages into "text_topic".
+// Now, you should see the messages that were produced in the console.
+// An on another console, you should see the messages that are consuming.
+
+// The complete code can be downloaded from GitHub // https://github.com/sparkbyexamples/spark-examples/tree/master/scala-kafka/src/main/scala/com/sparkbyexamples/kafka
+
+// Happy Learning !! 
