@@ -13,3 +13,14 @@
 // The below-explained example does the word count on streaming data and outputs the result to console.
 
 
+// Spark Streaming data from TCP Socket
+
+// Use readStream.format("socket") from Spark session object
+// to read data from the socket and provide options host and port where you want to stream data from.
+
+val df = spark.readStream
+        .format("socket")
+        .option("host","localhost")
+        .option("port","9090")
+        .load()
+
