@@ -24,3 +24,12 @@ val df = spark.readStream
         .option("port","9090")
         .load()
 
+// Spark reads the data from socket and represents it in a "value" column of DataFrame.
+// df.printSchema() outputs
+
+root
+ |-- value: string (nullable = true)
+
+
+
+
