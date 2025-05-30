@@ -31,5 +31,8 @@ root
  |-- value: string (nullable = true)
 
 
+// pyspark.sql.functions.explode
+// Explode - Returns a new row for each element in the given array or map.
+
 
 
