@@ -45,3 +45,15 @@ val wordDF = df.select(explode(split(df("value")," ")).alias("word"))
 
 val count = wordsDF.groupBy("word").count()
 
+
+// Spark Streaming to console
+
+// Use writeStream.format("console") to write data to console 
+// and outputMode("complete") should use when writing streaming aggregation DataFrames.
+
+val query = count.writeStream
+        .format("console")
+        .outputMode("complete")
+        .start()
+        .awaitTermination()
+
