@@ -35,4 +35,13 @@ root
 // Explode - Returns a new row for each element in the given array or map.
 
 
+// Process the data using DataFrame operations
+
+// Now let's process the data by counting the work;
+// first split the data,
+// use the explode to flatten it and apply groupBy function.
+
+val wordDF = df.select(explode(split(df("value")," ")).alias("word"))
+
+val count = wordsDF.groupBy("word").count()
 
