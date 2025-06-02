@@ -90,4 +90,14 @@ object SparkStreamingFromSocket {
 }
 
 
+// Let's see how to run this example.
+
+// 1. Install NetCat
+
+// First, let's write some data to Socket, using NetCat, use this utility we can write data to TCP socket,
+// it is the best utility to write to the socket.
+// after install run below command.
+
+nc -l -p 9090
+
 
