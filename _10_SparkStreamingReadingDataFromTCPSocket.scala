@@ -100,4 +100,18 @@ object SparkStreamingFromSocket {
 
 nc -l -p 9090
 
+// 2. Run Spark Streaming job.
+
+// The complete example code can also be found at GitHub. // https://github.com/sparkbyexamples/spark-examples/blob/master/spark-streaming/src/main/scala/com/sparkbyexamples/spark/streaming/SparkStreamingFromSocket.scala
+// Download it and run SparkStreamingFromSocket.scala from your favorite editor.
+// When program execution pauses, switch to NetCat console 
+// and type a few sentences and press enter for each line as shown below.
+
+ubuntu@namenode:~$ nc -l -p 7890
+My Name is Naveen
+I work for Oracle
+Oracle is good
+
+
+
 
