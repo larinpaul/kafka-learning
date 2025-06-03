@@ -112,6 +112,24 @@ My Name is Naveen
 I work for Oracle
 Oracle is good
 
+// Yields below output on your editor.
+
+-------------------------------------------
+Batch: 1
+-------------------------------------------
++------+-----+
+|  word|count|
++------+-----+
+|   for|    1|
+|Oracle|    2|
+|  Name|    1|
+|    is|    2|
+|Naveen|    1|
+|  work|    1|
+|    My|    1|
+|     I|    1|
+|  good|    1|
++------+-----+
 
 
 
