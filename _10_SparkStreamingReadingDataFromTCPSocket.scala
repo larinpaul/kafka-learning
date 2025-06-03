@@ -131,5 +131,9 @@ Batch: 1
 |  good|    1|
 +------+-----+
 
+// Conclusion
 
+// You have learned how to stream or read a data from TCP Socket 
+// using Spark Structured Streaming with Scala example
+// and also learned how to use NetCat to write data to TCP socket.
 
