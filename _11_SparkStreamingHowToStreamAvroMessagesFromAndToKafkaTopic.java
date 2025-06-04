@@ -5,7 +5,7 @@
 // Spark Streaming - How to Stream Avro messages from/to Kafka topic.
 
 // This article describes Spark Structured Streaming from Kafka in Avro file format
-// 
+// and usage of from_avro() and to_avro() SQL functions using the Scala programming language
 
 
 
