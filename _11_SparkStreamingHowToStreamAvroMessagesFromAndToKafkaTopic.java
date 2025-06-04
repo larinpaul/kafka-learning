@@ -8,5 +8,7 @@
 // and usage of from_avro() and to_avro() SQL functions using the Scala programming language
 
 
+// DATA STREAMING -> kafka -> Apache Spark STRUCTURED STREAMING -> Console|Memory|DB|Files
+
 
 
