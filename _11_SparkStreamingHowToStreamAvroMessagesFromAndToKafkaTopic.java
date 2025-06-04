@@ -11,4 +11,9 @@
 // DATA STREAMING -> kafka -> Apache Spark STRUCTURED STREAMING -> Console|Memory|DB|Files
 
 
+// * Reading Avro Data from Kafka Topic
+// * Writing Avro Data to Kafka Topic
+// * How to Run
+// ** Running Producer with Example
+// ** Running Consumer with Example
 
