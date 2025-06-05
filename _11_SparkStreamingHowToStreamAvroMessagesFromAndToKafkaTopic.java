@@ -39,5 +39,11 @@
 // When Avro data is stored in a file, its schema is stored with it,
 // so that files may be processed later by any program.
 
+// * Avro is best suited for scenarios where data is frequently written
+// and schema evolution is important,
+// making it iteal for data interchange and streaming applications.
+
+// * Parquet is optimzied for read-heavy opearions and analytical workloads,
+// making it a better choice for data warehousing and big data analytics
 
 
