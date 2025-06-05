@@ -26,6 +26,13 @@
 // from sources like Kafka, Flume, and Amazon Kinesis to name it a few.
 // This processed data can be pushed to databases, Kafka, live dashboards e.t.c
 
+// Apache Kafka is a publish-subscriber messaging system originally written at LinkedIn.
+// Accessing Kafka is enabled by using below Kafka client Maven dependency.
+<dependency>
+    <groupId>org.apache.spark</groupId>
+    <artifactId>spark-sql-kafka-0-10_2.11</artifactId>
+    <version>2.4.0</version>
+</dependency>
 
 
 
