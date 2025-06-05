@@ -34,6 +34,9 @@
     <version>2.4.0</version>
 </dependency>
 
-
+// Apache Avro is a data serialization system, // https://avro.apache.org/docs/++version++/
+// it is mostly used in Apache Spark especially for Kafka-based data pipelines.
+// When Avro data is stored in a file, its schema is stored with it,
+// so that files may be processed later by any program.
 
 
