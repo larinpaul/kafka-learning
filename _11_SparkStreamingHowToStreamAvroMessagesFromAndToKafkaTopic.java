@@ -46,4 +46,12 @@
 // * Parquet is optimzied for read-heavy opearions and analytical workloads,
 // making it a better choice for data warehousing and big data analytics
 
+// Accessing Avro from Spark is enabled by using below Spark-Avro Maven dependency.
+// The spark-avro module is external and not included in spark-submit or spark-shell by default.
+
+<dependency>
+    <groupId>org.apache.spark</groupId>
+    <artifactId>spark-avro_2.11</artifactId>
+    <version>2.4.0</version>
+</dependency>
 
