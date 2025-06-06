@@ -55,3 +55,14 @@
     <version>2.4.0</version>
 </dependency>
 
+
+// Prerequisites
+
+// If you don't have Kafka cluster setup. follow the below articles
+// to set up the single broker cluster
+// and get familiar with creating and describing topics.
+
+// * Install & set-up Kafka Cluster guide // https://sparkbyexamples.com/kafka/apache-kafka-cluster-setup/
+// * How to create and describe Kafka topics // https://sparkbyexamples.com/kafka/creating-apache-kafka-topic/
+
+
