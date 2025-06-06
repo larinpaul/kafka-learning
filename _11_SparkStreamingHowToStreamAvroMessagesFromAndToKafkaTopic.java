@@ -66,3 +66,21 @@
 // * How to create and describe Kafka topics // https://sparkbyexamples.com/kafka/creating-apache-kafka-topic/
 
 
+// Reading Avro data from Kafka Topic
+
+// Streaming uses readStream() on SparkSession to load a streaming Dataset.
+// option("startingOffsets", "earliest") is used to read all data
+// available in the topic at the start/earliest of the query, 
+// we may not use this option that often and the default value 
+// for straightOffsets is latest which reads only new data that's yet to process.
+
+val df = spark.readStream
+        .format("kafka")
+        .option("kafka.bootstrap.servers", "192.168.1.100:9092")
+        .option("subscribe", "avro_topic")
+        .option("startingOffsets", "earliest") // From starting
+        .load()
+
+df.printSchema()
+
+
