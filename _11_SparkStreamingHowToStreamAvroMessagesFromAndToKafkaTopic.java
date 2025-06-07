@@ -83,4 +83,16 @@ val df = spark.readStream
 
 df.printSchema()
 
+// df.printSchema() returns the schema of Kafka streaming.
+// The returned DataFrame contains all the familiar fields of a Kafka record
+// and its associated metadata.
+
+root
+ |-- key: binary (nullable = true)
+ |-- value: binary (nullable = true)
+ |-- topic: string (nullable = true)
+ |-- partition: integer (nullable = true)
+ |-- offset: long (nullable = true)
+ |-- timestamp: timestamp (nullable = true)
+ |-- timestampType: integer (nullable = true)
 
