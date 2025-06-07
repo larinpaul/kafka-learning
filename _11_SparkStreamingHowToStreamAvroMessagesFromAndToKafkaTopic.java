@@ -124,3 +124,17 @@ root
     ]    
 }
 
+// The Schema defines the field names and data types.
+// The receiver of Avro data needs to know this Schema
+// one time before starting processing.
+
+val jsonFormatSchema = new String(
+    Files.readAllBytes(Paths.get("./src/main/resources/person.avsc"))
+)
+
+val personDF = df.select(from_avro(col("value"),
+jsonFormatSchema).as("person"))
+        .select("person.*")
+
+// from_avro also takes a parameter that needs to decode.
+// here we are decoding the Kafka value field.
