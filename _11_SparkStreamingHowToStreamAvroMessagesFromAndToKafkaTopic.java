@@ -96,3 +96,31 @@ root
  |-- timestamp: timestamp (nullable = true)
  |-- timestampType: integer (nullable = true)
 
+
+// When we are writing to Kafka, Value is required and all other fields are optional.
+// key and value are binary in Kafka;
+// first, these should convert to String before we process.
+// If a key column is not specified then a null valued key column
+// will be automatically added.
+
+// To decode Avro data, we should use from_avro() function and this function 
+// takes Avro schema string as a parameter.
+// For out example, I am going to load this schema from a person.avsc file.
+// For reference, below is Avro's schema we going to use.
+
+{
+    "type": "record",
+    "name": "Person",
+    "namespace": "com.sparkbyexamples",
+    "field": [
+        {"name": "id","type": ["int", "null"]},
+        {"name": "firstname","type": ["string", "null"]},
+        {"name": "middlename","type": ["string", "null"]},
+        {"name":"lastname","type": ["string", "null"]},
+        {"name": "dob_year","type": ["int", "null"]},
+        {"name": "dob_month","type": ["int", "null"]},
+        {"name": "gender","type": ["int", "null"]},
+        {"name": "salary","type": ["int", "null"]}
+    ]    
+}
+
