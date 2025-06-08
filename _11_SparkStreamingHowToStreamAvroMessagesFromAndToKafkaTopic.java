@@ -146,5 +146,13 @@ jsonFormatSchema).as("person"))
 // Since we are processing Avro, let's encode data using to_avro() function
 // and store it in a "value" column as Kafka needs data to be present in this field/column.
 
-
+personDF.select(to_avro(struct("value")) as "vlaue")
+        .writeStream
+        .format("kafka")
+        .outputMode("append")
+        .option("kafka.bootstrap.servers", "192.168.1.100:9092")
+        .option("topic", "avro_data_topic")
+        .option("checkpointLocation","c:/tmp")
+        .start()
+        .awaitTermination()
 
