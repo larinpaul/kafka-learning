@@ -156,3 +156,11 @@ personDF.select(to_avro(struct("value")) as "vlaue")
         .start()
         .awaitTermination()
 
+// Using writeStream.format("kafka") to write the streaming DataFrame to Kafka topic.
+// Since we are just reading a file (without any aggregations)
+// and writing as-is, we are using outputMode("append").
+// OutputMode // https://sparkbyexamples.com/spark/spark-streaming-outputmode/
+// is used to what data will be written to a sink
+// when there is new data available in a DataFrame/Dataset
+
+
