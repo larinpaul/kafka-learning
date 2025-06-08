@@ -138,3 +138,13 @@ jsonFormatSchema).as("person"))
 
 // from_avro also takes a parameter that needs to decode.
 // here we are decoding the Kafka value field.
+
+
+// Writing Avro data to Kafka Topic
+
+// Let's produce the data to Kafka topic "avro_data_topic".
+// Since we are processing Avro, let's encode data using to_avro() function
+// and store it in a "value" column as Kafka needs data to be present in this field/column.
+
+
+
