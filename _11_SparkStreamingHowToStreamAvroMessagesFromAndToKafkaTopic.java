@@ -164,3 +164,12 @@ personDF.select(to_avro(struct("value")) as "vlaue")
 // when there is new data available in a DataFrame/Dataset
 
 
+// How to Run?
+
+// First will start a Kafka shell producer that comes with Kafka distribution and produces JSON message.
+// Later, I will write a Spark Streaming program that consumes these messages,
+// converts it to Avro and sends it to another Kafka topic.
+// Finally will create another Spark Streaming program
+// that consumer Avro messages from Kafka, decodes the data to
+//and writes it to Console.
+
