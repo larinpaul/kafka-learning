@@ -171,5 +171,22 @@ personDF.select(to_avro(struct("value")) as "vlaue")
 // converts it to Avro and sends it to another Kafka topic.
 // Finally will create another Spark Streaming program
 // that consumer Avro messages from Kafka, decodes the data to
-//and writes it to Console.
+// and writes it to Console.
+
+
+// 1. Run Kafka Producer shell that comes with Kafka
+// distribution and inputs the JSON data from person.json.
+// To feed data, just copy one line at a time
+// from person.json file and paste it on the console
+// where Kafka Producer shell is running
+
+bin/kafka-console-producer.sh \
+--broker-list localhost:9092 --topic json_topic
+
+
+
+
+
+
+
 
