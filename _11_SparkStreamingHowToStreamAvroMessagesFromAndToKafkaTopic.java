@@ -184,7 +184,15 @@ bin/kafka-console-producer.sh \
 --broker-list localhost:9092 --topic json_topic
 
 
+// 2. Run Kafka Producer
 
+// The complete Spark Streaming Avro Kafka Example code
+// can be downloaded from GitHub. // https://github.com/sparkbyexamples/spark-examples/tree/master/spark-streaming/src/main/scala/com/sparkbyexamples/spark/streaming/kafka/avro
+// On this program change Kafka broker IP address to your server IP
+// and run KafkaProduceAvro.scala from your favorite editor.
+// This program reads the JSON message from Kafka // https://sparkbyexamples.com/spark/spark-streaming-from-kafka-topic/
+// topic "json_topic",
+// encode the data to Avro and sends it to another Kafka topic "avro_topic".
 
 
 
