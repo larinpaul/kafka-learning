@@ -219,6 +219,18 @@ object KafkaProduceAvro {
             .option("subscribe", "json_topic")
             .option("startingOffsets", "earliest") // From starting
             .load()
+        /*
+         Prints Kafka schema with columns (topic, offset, partition e.t.c)
+         */
+        df.printSchema()
+        val schema = new StructType()
+            .add("id",IntegerType)
+            .add("firstname",StringType)
+            .add("middlename",StringType)
+            .add("lastname",StringType)
+            .add("dob_month",IntegerType)
+            .add("gender",StringType)
+            .add("salary",IntegerType)
         
 
     }
