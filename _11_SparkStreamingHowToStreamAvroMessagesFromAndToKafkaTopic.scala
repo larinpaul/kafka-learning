@@ -231,6 +231,17 @@ object KafkaProduceAvro {
             .add("dob_month",IntegerType)
             .add("gender",StringType)
             .add("salary",IntegerType)
+        /*
+        Converts JSON string to DataFrame
+        */
+        val personDF = df.selectExpr("CAST(value AS STRING)") // First convert binary to string
+            .select(from_json(col("value"), schema).as("data"))
+        personDF.printSchema()
+
+        /*
+          * Convert DataFrame columns to Avro format and name it as "value"
+          * And send this Avro data to Kafka topic
+          */
         
 
     }
