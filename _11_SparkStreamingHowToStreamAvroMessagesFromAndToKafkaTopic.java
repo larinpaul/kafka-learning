@@ -200,7 +200,28 @@ import org.apache.spark.sql.functions.{col, from_json, to_json, struct}
 import org.apache.spark.sql.avro.to_avro
 import org.apache.spark.sql.types.{IntegerType, StringType, StructuType}
 object KafkaProduceAvro {
-    
+    def main(args: Array[String]): Unit = {
+        
+        val spark: SparkSession = SparkSession.builder()
+            .master("local[1]")
+            .appName("SparkByExample.com")
+            .getOrCreate()
+        /*
+        Disable logging as it writes too much log
+         */
+        spark.sparkContext.setLogLevel("ERROR")
+        /*
+        This consumes JSON data from Kafka
+         */
+        val df = spark.readStream
+            .format("kafka")
+            .option("kafka.bootstrap.servers", "192.168.1.100:9092")
+            .option("subscribe", "json_topic")
+            .option("startingOffsets", "earliest") // From starting
+            .load()
+        
+
+    }
 
 }
 
