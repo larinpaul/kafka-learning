@@ -283,7 +283,18 @@ object KafkaConsumerAvro {
           Prints Kafka schema with columns (topics, offset, partition e.t.c)
           */
         df.printSchema()
-        
+        /*
+        Read schema to convert Avro data to DataFrame
+          */
+        val jsonFormatSchema = new String(
+            Files.readAllBytes(Paths.get("./src/main/resources/person.avsc")))
+
+        val personDF = df.select(from_avro(col("value")m jsonFormatSchema).as("person"))
+            .select("person.*")
+        personDF.printSchema()
+        /*
+        Stream
+        */
         
     }
 
