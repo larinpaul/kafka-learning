@@ -194,7 +194,15 @@ bin/kafka-console-producer.sh \
 // topic "json_topic",
 // encode the data to Avro and sends it to another Kafka topic "avro_topic".
 
+package com.sparkbyexamples.spark.streaming.kafka.avro
+import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.functions.{col, from_json, to_json, struct}
+import org.apache.spark.sql.avro.to_avro
+import org.apache.spark.sql.types.{IntegerType, StringType, StructuType}
+object KafkaProduceAvro {
+    
 
+}
 
 
 
