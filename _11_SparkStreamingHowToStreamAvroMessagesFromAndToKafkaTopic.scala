@@ -242,10 +242,16 @@ object KafkaProduceAvro {
           * Convert DataFrame columns to Avro format and name it as "value"
           * And send this Avro data to Kafka topic
           */
-        
-
+        personDF.select(to_avro(struct("data.*")) as "value")
+            .writeStream
+            .format("kafka")
+            .outputMode("append")
+            .option("kafka.bootstrap.servers", "192.168.1.100:9092")
+            .option("topic", "avro_topic")
+            .option("checkpointLocation","c:/tmp")
+            .start()
+            .awaitTermination()   
     }
-
 }
 
 
