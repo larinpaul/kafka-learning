@@ -293,14 +293,12 @@ object KafkaConsumerAvro {
             .select("person.*")
         personDF.printSchema()
         /*
-        Stream
+        Stream data to Console for testing
         */
-        
+        personDF.writeStream
+            .format("console")
+            .outputMode("append")
+            .start()
+            .awaitTermination()
     }
-
-
 }
-
-
-
-
