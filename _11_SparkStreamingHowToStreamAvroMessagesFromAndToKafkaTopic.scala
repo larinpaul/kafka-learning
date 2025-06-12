@@ -254,5 +254,42 @@ object KafkaProduceAvro {
     }
 }
 
+// 3. Run Kafka Consumer
+
+// This programreads Avro message from Kafka topic "avro_topics", 
+// decodes it and finally streams to console.
+
+package com.sparkbyexamples.spark.streaming.kafka.avro
+import java.nio.file.{Files, Paths}
+import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.avro._
+import org.apache.spark.sql.functions.col
+
+object KafkaConsumerAvro {
+    def main(args: Array[String]): Unit = {
+
+        val spark: SparkSession = SparkSession.builder()
+            .master("local")
+            .appName("SparkByExample.com")
+            .getOrCreate()
+        spark.sparkContext.setLogLevel("ERROR")
+        val df = spark.readStream
+            .format("kafka")
+            .option("kafka.bootstrap.servers", "192.168.1.100:9092")
+            .option("subscribe", "avro_topic")
+            .option("startingOffsets", "earliest") // From starting
+            .load()
+        /*
+          Prints Kafka schema with columns (topics, offset, partition e.t.c)
+          */
+        df.printSchema()
+        
+        
+    }
+
+
+}
+
+
 
 
